@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_EEEEEE"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title" />
+
+    <EditText
+        android:id="@+id/et_profile"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/a_132"
+        android:layout_marginTop="@dimen/a_20"
+        android:background="@color/player_white"
+        android:gravity="start"
+        android:hint="@string/profile"
+        android:padding="@dimen/a_12"
+        android:text="sdfsdf"
+        android:textColorHint="@color/color_cccccc"
+        android:textSize="@dimen/t_30" />
+</LinearLayout>

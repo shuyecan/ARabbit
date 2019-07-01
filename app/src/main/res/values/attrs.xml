@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--for 圆形imageview-->
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+    <!--for 裁剪imageview-->
+    <declare-styleable name="ClipSquareImageView">
+        <attr name="ClipSquareIV_BorderDistance" format="dimension" />
+        <attr name="ClipSquareIV_BorderWidth" format="dimension" />
+        <attr name="ClipSquareIV_BorderColor" format="color" />
+        <attr name="ClipSquareIV_OutsideColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ToggleButton">
+        <attr name="tbBorderWidth" format="dimension" />
+        <attr name="tbOffBorderColor" format="reference|color" />
+        <attr name="tbOffColor" format="reference|color" />
+        <attr name="tbOnColor" format="reference|color" />
+        <attr name="tbSpotColor" format="reference|color" />
+        <attr name="tbAnimate" format="reference|boolean" />
+        <attr name="tbAsDefaultOn" format="reference|boolean" />
+    </declare-styleable>
+
+
+    <declare-styleable name="qr_ViewfinderView">
+        <attr name="qr_angleColor" format="color" />
+        <attr name="qr_hint" format="string" />
+        <attr name="qr_textHintColor" format="color" />
+        <attr name="qr_errorHint" format="string" />
+        <attr name="qr_textErrorHintColor" format="color" />
+        <attr name="qr_offsetX" format="integer" />
+        <attr name="qr_offsetY" format="integer" />
+        <attr name="qr_showPossiblePoint" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="EditSpinner">
+        <attr name="hint" format="string" />
+        <attr name="rightImage" format="reference" />
+        <attr name="Background" format="reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="searchedit">
+        <attr name="imagewidth" format="dimension" />
+        <attr name="textSize" format="dimension" />
+        <attr name="textColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="StaggeredGridView">
+        <attr name="drawSelectorOnTop" format="boolean" />
+        <attr name="numColumns" format="integer" />
+        <attr name="itemMargin" format="dimension" />
+    </declare-styleable>
+
+
+    <declare-styleable name="Banner">
+        <attr name="delay_time" format="integer" />
+        <attr name="scroll_time" format="integer" />
+        <attr name="is_auto_play" format="boolean" />
+        <attr name="title_background" format="color|reference" />
+        <attr name="title_textcolor" format="color" />
+        <attr name="title_textsize" format="dimension" />
+        <attr name="title_height" format="dimension" />
+        <attr name="indicator_width" format="dimension" />
+        <attr name="indicator_height" format="dimension" />
+        <attr name="indicator_margin" format="dimension" />
+        <attr name="indicator_drawable_selected" format="reference" />
+        <attr name="indicator_drawable_unselected" format="reference" />
+        <attr name="layout_id" format="reference" />
+        <attr name="image_scale_type" format="enum">
+            <enum name="center" value="0" />
+            <enum name="center_crop" value="1" />
+            <enum name="center_inside" value="2" />
+            <enum name="fit_center" value="3" />
+            <enum name="fit_end" value="4" />
+            <enum name="fit_start" value="5" />
+            <enum name="fit_xy" value="6" />
+            <enum name="matrix" value="7" />
+        </attr>
+        <!--<attr name="indicator_animator" format="reference" />-->
+        <!--<attr name="indicator_animator_reverse" format="reference" />-->
+    </declare-styleable>
+
+
+    <!--RereshAndLoadLayout 风格-->
+    <declare-styleable name="CircleProgressBar">
+        <attr name="mlpb_inner_radius" format="dimension" />
+        <attr name="mlpb_background_color" format="color" />
+        <attr name="mlpb_progress_color" format="color" />
+        <attr name="mlpb_progress_stoke_width" format="dimension" />
+        <attr name="mlpb_show_arrow" format="boolean" />
+        <attr name="mlpb_enable_circle_background" format="boolean" />
+        <attr name="mlpb_arrow_width" format="dimension" />
+        <attr name="mlpb_arrow_height" format="dimension" />
+
+        <attr name="mlpb_progress" format="integer" />
+        <attr name="mlpb_max" format="integer" />
+
+
+        <attr name="mlpb_progress_text_size" format="dimension" />
+        <attr name="mlpb_progress_text_color" format="color" />
+
+        <!--<attr name="mlpb_progress_text_offset" format="dimension"/>-->
+
+        <attr name="mlpb_progress_text_visibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <!-- style for MaterialRefreshLayout  -->
+    <declare-styleable name="MaterialRefreshLayout">
+        <attr name="overlay" format="boolean" />
+        <!-- style for MaterialWaveView  -->
+        <attr name="wave_height_type" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="higher" value="1" />
+        </attr>
+        <attr name="wave_color" format="color" />
+        <attr name="wave_show" format="boolean" />
+        <!-- style for CircleProgressBar  -->
+        <attr name="progress_colors" format="reference" />
+        <attr name="progress_stoke_width" format="dimension" />
+        <attr name="progress_backgroud_color" format="color" />
+        <attr name="progress_show_arrow" format="boolean" />
+        <attr name="progress_arrow_width" format="dimension" />
+        <attr name="progress_arrow_height" format="dimension" />
+        <attr name="progress_show_circle_backgroud" format="boolean" />
+        <attr name="progress_value" format="integer" />
+        <attr name="progress_max_value" format="integer" />
+        <attr name="progress_text_size" format="dimension" />
+        <attr name="progress_text_color" format="color" />
+        <attr name="progress_text_visibility" format="enum">
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
+        </attr>
+        <attr name="progress_size_type" format="enum">
+            <enum name="normal" value="0"></enum>
+            <enum name="big" value="1"></enum>
+        </attr>
+        <attr name="isLoadMore" format="boolean"></attr>
+    </declare-styleable>
+
+
+    <!--设置水平或垂直滑动的Viewpager-->
+    <declare-styleable name="ViewPagerHVB">
+        <attr name="isVertical" format="boolean" />
+    </declare-styleable>
+
+
+    <declare-styleable name="CustomSpinner">
+        <attr name="cs_textSize" format="dimension" />
+        <attr name="cs_textColor" format="color" />
+        <attr name="cs_leftMargin" format="dimension" />
+        <attr name="cs_rightMargin" format="dimension" />
+        <attr name="cs_itemHeight" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="MarqueeViewStyle">
+        <attr name="mvInterval" format="integer|reference" />
+        <attr name="mvAnimDuration" format="integer|reference" />
+        <attr name="mvTextSize" format="dimension|reference" />
+        <attr name="mvTextColor" format="color|reference" />
+        <attr name="mvSingleLine" format="boolean" />
+        <attr name="mvGravity">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="PagerSlidingTab">
+        <attr name="pstSelectedTextSize" format="dimension" />
+        <attr name="pstIndicatorColor" format="color" />
+        <attr name="pstIndicatorHeight" format="dimension" />
+        <attr name="pstUnderlineColor" format="color" />
+        <attr name="pstUnderlineHeight" format="dimension" />
+        <attr name="pstTabPadding" format="dimension" />
+        <attr name="pstBackground" format="reference" />
+        <attr name="pstExpandMode" format="enum">
+            <enum name="wrap" value="0" />
+            <enum name="fixed" value="1" />
+            <enum name="expanded" value="2" />
+            <enum name="react" value="3" />
+        </attr>
+        <attr name="pstFixedWidth" format="dimension" />
+        <attr name="pstScrollOffset" format="dimension" />
+        <attr name="pstIndicatorMode" format="enum">
+            <enum name="match" value="0" />
+            <enum name="wrap" value="1" />
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="SeatTableView">
+        <attr name="seat_checked" format="reference" />
+        <attr name="seat_sold" format="reference" />
+        <attr name="seat_available" format="reference" />
+        <attr name="overview_checked" format="color" />
+        <attr name="overview_sold" format="color" />
+        <attr name="txt_color" format="color"/>
+        <attr name="redtxt_color" format="color"/>
+    </declare-styleable>
+
+</resources>

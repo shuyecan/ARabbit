@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical">
+    <include layout="@layout/layout_title1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/lay_editor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+                <!--位置：-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/player_white"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/a_20"
+                        android:gravity="center_vertical"
+                        android:text="位置定位："
+                        android:textColor="@color/black_212121"
+                        android:textSize="@dimen/t_28" />
+
+                    <EditText
+                        android:id="@+id/sch_adress"
+                        android:layout_width="@dimen/a_400"
+                        android:layout_height="match_parent"
+                        android:text=""
+                        android:textColor="@color/black_212121"
+                        android:textSize="@dimen/t_28" />
+
+                </LinearLayout>
+            </LinearLayout>
+            <!--距离：-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/a_20"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/a_20"
+                    android:gravity="center_vertical"
+                    android:text="距离范围:"
+                    android:textColor="@color/black_212121"
+                    android:textSize="@dimen/t_28" />
+
+                <EditText
+                    android:id="@+id/mb_far"
+                    android:layout_width="@dimen/a_90"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/a_10"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/black_212121"
+                    android:textSize="@dimen/t_28" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/a_20"
+                    android:gravity="center_vertical"
+                    android:text="千米"
+                    android:textColor="@color/black_212121"
+                    android:textSize="@dimen/t_28" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/a_20"
+                    android:gravity="center_vertical"
+                    android:text="行业类别:"
+                    android:textColor="@color/black_212121"
+                    android:textSize="@dimen/t_28" />
+
+                <EditText
+                    android:id="@+id/mb_cat"
+                    android:layout_width="@dimen/a_160"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/a_10"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/black_212121"
+                    android:textSize="@dimen/t_28" />
+                <!--查找：-->
+                <ImageView
+                    android:id="@+id/bt_sch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/a_50"
+                    android:textColor="@color/player_white"
+                    android:text="查找"
+                    android:src="@mipmap/chaz"/>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/a_1"
+                android:layout_marginTop="@dimen/a_20"
+                android:background="@color/hn_e5e5e5" />
+
+            <com.arabbit.view.ListViewForScrollView
+                android:id="@+id/lv_shop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+</LinearLayout>

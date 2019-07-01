@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/a_90"
+                android:background="@color/player_black"
+                android:padding="@dimen/a_10">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="27dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:src="@mipmap/ac1"/>
+
+    <TextView
+        android:id="@+id/title_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:ellipsize="end"
+        android:text="标题"
+        android:textColor="@color/player_white"
+        android:textSize="@dimen/t_40"/>
+
+
+    <TextView
+        android:id="@+id/tv_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/a_20"
+        android:background="@drawable/shipe_tv_tra"
+        android:drawablePadding="@dimen/a_10"
+        android:gravity="center"
+        android:padding="@dimen/a_6"
+        android:text="@string/home_page"
+        android:textColor="@color/player_grey"
+        android:visibility="gone"/>
+
+
+</RelativeLayout>

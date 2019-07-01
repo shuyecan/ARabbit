@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.jwenfeng.pulltorefresh:library-1.0.3">
+    <ANNOTATIONS>
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.jwenfeng.pulltorefresh/library/1.0.3/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.jwenfeng.pulltorefresh/library/1.0.3/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.jwenfeng.pulltorefresh/library/1.0.3/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jwenfeng.pulltorefresh/library/1.0.3/68c0abd6e235729776d02bd9a0f5f1f6893c26d7/library-1.0.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

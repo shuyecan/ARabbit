@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.arabbit">
+
+    <!-- 用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 拍照 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- 允许程序设置内置sd卡的写权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 允许程序获取网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 允许程序访问WiFi网络信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 允许程序读写手机状态和身份 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 允许程序访问CellID或WiFi热点来获取粗略的位置 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+
+    <application
+        android:name=".application.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/denglu_img_logo"
+        android:label="@string/app_name"
+        android:persistent="true"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/Notitle"
+        tools:replace="android:icon,android:theme,android:allowBackup">
+        <activity
+            android:name=".activity.login.LoginActivity"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".activity.login.RegisterActivity" />
+        <activity android:name=".activity.persional.SetUpGenderActivity" />
+        <activity android:name=".activity.persional.PersonalAvatarActivity" />
+        <activity android:name=".activity.SetUpActivity" />
+        <activity android:name=".activity.address.AreaActivity" />
+        <activity android:name=".activity.address.AddressActivity" />
+        <activity android:name=".activity.persional.ProfileActivity" />
+        <activity android:name=".activity.persional.PersonalHomepageActivity" />
+        <activity android:name=".activity.persional.NickNameActivity" />
+        <activity android:name=".activity.persional.PhoneActivity" />
+        <activity android:name=".activity.persional.StudentDataActivity" />
+        <activity android:name=".activity.persional.StudentDataMoreActivity" />
+        <activity android:name=".activity.SeatDeatilActivity" />
+        <activity android:name=".activity.StudentSeatInformationActivity" />
+        <activity android:name=".activity.login.TypeActivity" />
+        <activity android:name=".activity.login.SchoolActivity" />
+        <activity android:name=".activity.persional.StudentInfoActivity" />
+        <activity android:name=".activity.persional.UpdatePasswordActivity" />
+        <activity android:name=".activity.promotion.UpxceActivity" />
+        <activity android:name=".activity.promotion.UpvedioActivity" />
+        <activity android:name=".activity.promotion.UpgiftActivity" />
+        <activity android:name=".activity.promotion.AddgiftActivity" />
+        <activity android:name=".activity.promotion.GiftinfoActivity" />
+        <activity android:name=".activity.promotion.UpprizeActivity" />
+        <activity android:name=".activity.promotion.AddprzieActivity" />
+        <activity android:name=".activity.promotion.AddprotionActivity" />
+        <activity android:name=".activity.promotion.ProtioninfoActivity" />
+        <activity android:name=".activity.promotion.PrizeInfoActivity" />
+        <activity android:name=".activity.promotion.UpdateGiftActivity" />
+        <activity android:name=".activity.promotion.UpdateProtionActivity" />
+        <activity android:name=".activity.promotion.UpdatePrizeActivity" />
+        <activity android:name=".activity.promotion.GiftUserActivity" />
+        <activity android:name=".activity.promotion.ProtionUserActivity" />
+        <activity android:name=".activity.promotion.WProUserActivity" />
+        <activity android:name=".activity.promotion.PrizeUserActivity" />
+        <activity android:name=".activity.promotion.ProRuleActivity" />
+        <activity android:name=".activity.promotion.JoinUserActivity" />
+        <activity android:name=".activity.Userpage.UserCardActivity" />
+        <activity android:name=".activity.Userpage.AddUsercardActivity" />
+        <activity android:name=".activity.Userpage.UserMoreActivity" />
+        <activity android:name=".activity.Userpage.SeeGiftActivity" />
+        <activity android:name=".activity.Userpage.SeeProtionActivity" />
+        <activity android:name=".activity.Userpage.ComProtionActivity" />
+        <activity android:name=".activity.Userpage.SeeGiftInfoActivity" />
+        <activity android:name=".activity.Userpage.SeePrizeInfoActivity" />
+        <activity android:name=".activity.Userpage.MygiftActivity" />
+        <activity android:name=".activity.Userpage.MyprizeActivity" />
+        <activity android:name=".activity.Userpage.MyGiftInfoActivity" />
+        <activity android:name=".activity.Userpage.MyPrizeInfoActivity" />
+        <activity android:name=".activity.Userpage.SeeUserCardActivity" />
+        <activity android:name=".activity.Userpage.SearchUserActivity" />
+        <activity android:name=".activity.Userpage.UserInfoActivity" />
+        <activity android:name=".activity.Userpage.UserPostInfoActivity" />
+        <activity android:name=".activity.Userpage.MyshopcpActivity" />
+        <activity android:name=".activity.Userpage.MyshopcpGoodActivity" />
+        <activity android:name=".activity.Userpage.MyshopmbActivity" />
+        <activity android:name=".activity.Userpage.MyshopmbGoodActivity" />
+        <activity android:name=".activity.Userpage.MyshopprListActivity" />
+        <activity android:name=".activity.Userpage.MyshopprInfoActivity" />
+        <activity android:name=".activity.shop.AddShopcpgoodActivity" />
+        <activity android:name=".activity.shop.AddShopmbActivity" />
+        <activity android:name=".activity.shop.AddShopmbgoodActivity" />
+        <activity android:name=".activity.shop.AddShopprActivity" />
+        <activity android:name=".activity.shop.AddShopptActivity" />
+        <activity android:name=".activity.shop.SeeShopcpActivity" />
+        <activity android:name=".activity.shop.SeeShopcpgoodActivity" />
+        <activity android:name=".activity.shop.SeeShopmbActivity" />
+        <activity android:name=".activity.shop.SeeShopmbgoodActivity" />
+        <activity android:name=".activity.shop.SeeShopmbListActivity" />
+        <activity android:name=".activity.shop.ShopmbRuleActivity" />
+        <activity android:name=".activity.shop.SeeShopprActivity" />
+        <activity android:name=".activity.shop.SeeShopprinfoActivity" />
+        <activity android:name=".activity.shop.SeeShopptActivity" />
+        <activity android:name=".activity.shop.ShopcpActivity" />
+        <activity android:name=".activity.shop.ShopcpgoodActivity" />
+        <activity android:name=".activity.shop.ShopcpUserActivity" />
+        <activity android:name=".activity.shop.ShopdataActivity" />
+        <activity android:name=".activity.shop.ShopdetailsActivity" />
+        <activity android:name=".activity.shop.ShopinfoActivity" />
+        <activity android:name=".activity.shop.ShopmbActivity" />
+        <activity android:name=".activity.shop.ShopmbgoodActivity" />
+        <activity android:name=".activity.shop.ShopmbListActivity" />
+        <activity android:name=".activity.shop.ShopmbUserActivity" />
+        <activity android:name=".activity.shop.ShopprActivity" />
+        <activity android:name=".activity.shop.ShopprinfoActivity" />
+        <activity android:name=".activity.shop.ShopprUserActivity" />
+        <activity android:name=".activity.shop.ShopptActivity" />
+        <activity android:name=".activity.shop.ShopptRuleActivity" />
+        <activity android:name=".activity.shop.ShopptUserActivity" />
+        <activity android:name=".activity.shop.ShopptWuserActivity" />
+        <activity android:name=".activity.shop.StorecpShopActivity" />
+        <activity android:name=".activity.shop.StorembShopActivity" />
+        <activity android:name=".activity.shop.StoreNearShopActivity" />
+        <activity android:name=".activity.shop.StoreptShopActivity" />
+        <activity android:name=".activity.shop.StoreShopActivity" />
+        <activity android:name=".activity.shop.UpdateShopcpgoodActivity" />
+        <activity android:name=".activity.shop.UpdateShopmbActivity" />
+        <activity android:name=".activity.shop.UpdateShopmbgoodActivity" />
+        <activity android:name=".activity.shop.UpdateShopprActivity" />
+        <activity android:name=".activity.shop.UpdateShopptActivity" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.arabbit.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <!-- <activity android:name="me.wangyi.imagepicker.ui.ImagePickerActivity" android:theme="@style/AppTheme"/> -->
+        <!-- <activity android:name="me.wangyi.imagepicker.ui.ImagePreViewActivity" android:theme="@style/AppTheme"/> -->
+
+        <activity android:name=".activity.persional.LookAlbumActivity" />
+        <activity android:name=".activity.persional.LookSingleAlbumActivity" />
+        <activity android:name=".activity.promotion.UploadVideoActivity" />
+        <activity android:name=".activity.persional.LookVideoListActivity" />
+        <activity android:hardwareAccelerated="true"
+            android:configChanges="orientation|screenSize"
+            android:name=".activity.webview.BaseWebViewActivity"></activity>
+    </application>
+
+</manifest>

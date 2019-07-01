@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/a_90"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/a_22">
+
+        <ImageView
+            android:id="@+id/iv_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/ico_dangqianliebiao"/>
+
+        <ImageView
+            android:id="@+id/iv_choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/a_10"
+            android:src="@mipmap/ico_danxuan_selected"/>
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/a_10"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="2017年春季 大一学生座位安排表"
+            android:textColor="@color/bh_333333"/>
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="2017.02.23"
+            android:textColor="@color/bh_666666"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/a_1"
+        android:layout_marginLeft="@dimen/a_20"
+        android:background="@color/player_grey"/>
+</LinearLayout>

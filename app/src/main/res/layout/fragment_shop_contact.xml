@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_EEEEEE"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/a_30"
+            android:orientation="vertical">
+            <!--收藏店铺-->
+            <LinearLayout
+                android:id="@+id/store_shop"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/a_80"
+                android:layout_marginTop="@dimen/a_10"
+                android:background="@color/player_white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/a_50"
+                        android:layout_height="@dimen/a_50"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/a_20"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/shop" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/a_30"
+                        android:gravity="center_vertical"
+                        android:text="@string/store_shop"
+                        android:textColor="@color/bh_666666"
+                        android:textSize="@dimen/t_30" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/a_1"
+                    android:layout_marginLeft="@dimen/a_30"
+                    android:background="@color/hn_e5e5e5" />
+            </LinearLayout>
+            <!--附近店铺-->
+            <LinearLayout
+                android:id="@+id/near_shop"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/a_80"
+                android:layout_marginTop="@dimen/a_10"
+                android:background="@color/player_white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/a_50"
+                        android:layout_height="@dimen/a_50"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/a_20"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/posit" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/a_30"
+                        android:gravity="center_vertical"
+                        android:text="@string/near_shop"
+                        android:textColor="@color/bh_666666"
+                        android:textSize="@dimen/t_30" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/a_1"
+                    android:layout_marginLeft="@dimen/a_30"
+                    android:background="@color/hn_e5e5e5" />
+            </LinearLayout>
+            <!--秒爆促销店铺-->
+            <LinearLayout
+                android:id="@+id/miaob_sales"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/a_80"
+                android:layout_marginTop="@dimen/a_10"
+                android:background="@color/player_white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_mbimg"
+                        android:layout_width="@dimen/a_50"
+                        android:layout_height="@dimen/a_50"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/a_20"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/starmb" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/a_30"
+                        android:gravity="center_vertical"
+                        android:text="@string/miaob_shop"
+                        android:textColor="@color/bh_666666"
+                        android:textSize="@dimen/t_30" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/a_1"
+                    android:layout_marginLeft="@dimen/a_30"
+                    android:background="@color/hn_e5e5e5" />
+            </LinearLayout>
+            <!--有奖促销店铺-->
+            <LinearLayout
+                android:id="@+id/layout_prize"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/a_80"
+                android:layout_marginTop="@dimen/a_10"
+                android:background="@color/player_white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_primg"
+                        android:layout_width="@dimen/a_50"
+                        android:layout_height="@dimen/a_50"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/a_20"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/a_30"
+                        android:gravity="center_vertical"
+                        android:text="@string/przie_shop"
+                        android:textColor="@color/bh_666666"
+                        android:textSize="@dimen/t_30" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/a_1"
+                    android:layout_marginLeft="@dimen/a_30"
+                    android:background="@color/hn_e5e5e5" />
+            </LinearLayout>
+            <!--打折促销店铺-->
+            <LinearLayout
+                android:id="@+id/layout_coupon"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/a_80"
+                android:layout_marginTop="@dimen/a_10"
+                android:background="@color/player_white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_cpimg"
+                        android:layout_width="@dimen/a_50"
+                        android:layout_height="@dimen/a_50"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/a_20"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/starcp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/a_30"
+                        android:gravity="center_vertical"
+                        android:text="@string/coupon_shop"
+                        android:textColor="@color/bh_666666"
+                        android:textSize="@dimen/t_30" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/a_1"
+                    android:layout_marginLeft="@dimen/a_30"
+                    android:background="@color/hn_e5e5e5" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

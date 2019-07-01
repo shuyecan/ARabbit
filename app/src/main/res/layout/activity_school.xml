@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_EEEEEE"
+              android:orientation="vertical">
+
+    <include layout="@layout/layout_title"/>
+
+
+    <com.jwenfeng.library.pulltorefresh.PullToRefreshLayout
+        android:id="@+id/pl_school"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/a_20">
+
+        <ListView
+            android:id="@+id/lv_school"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </com.jwenfeng.library.pulltorefresh.PullToRefreshLayout>
+
+
+</LinearLayout>

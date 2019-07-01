@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <include layout="@layout/layout_title1"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!--<ScrollView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <!--标题图片-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/a_330"
+                    android:layout_marginTop="@dimen/a_20"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/pr_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                </LinearLayout>
+                <!--中奖用户：-->
+                <LinearLayout
+                    android:id="@+id/pr_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/a_50"
+                    android:background="@color/player_white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/a_30"
+                            android:gravity="center_vertical"
+                            android:text="中奖用户："
+                            android:textColor="@color/bh_666666"
+                            android:textSize="@dimen/t_32" />
+
+                        <TextView
+                            android:id="@+id/pr_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="@color/bh_666666"
+                            android:textSize="@dimen/t_30" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/a_30"
+                            android:gravity="center_vertical"
+                            android:text="人"
+                            android:textColor="@color/bh_666666"
+                            android:textSize="@dimen/t_32" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/a_1"
+                        android:layout_marginLeft="@dimen/a_30"
+                        android:background="@color/hn_e5e5e5" />
+                </LinearLayout>
+                <!--奖品名称：-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/a_40"
+                    android:background="@color/player_white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/a_30"
+                            android:gravity="center_vertical"
+                            android:text="奖品名称："
+                            android:textColor="@color/bh_666666"
+                            android:textSize="@dimen/t_32" />
+
+                        <TextView
+                            android:id="@+id/pr_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="@color/bh_666666"
+                            android:textSize="@dimen/t_30" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/a_1"
+                        android:layout_marginLeft="@dimen/a_30"
+                        android:background="@color/hn_e5e5e5" />
+                </LinearLayout>
+                <!--市场价：-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/a_40"
+                    android:background="@color/player_white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/a_30"
+                            android:gravity="center_vertical"
+                            android:text="市场价："
+                            android:textColor="@color/player_red"
+                            android:textSize="@dimen/t_32" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/a_10"
+                            android:text="￥"
+                            android:textColor="@color/player_red"
+                            android:textSize="@dimen/t_30" />
+
+                        <TextView
+                            android:id="@+id/pr_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/a_10"
+                            android:text=""
+                            android:textColor="@color/player_red"
+                            android:textSize="@dimen/t_30" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/a_1"
+                        android:layout_marginLeft="@dimen/a_30"
+                        android:background="@color/hn_e5e5e5" />
+                </LinearLayout>
+                <!--标签介绍：-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/a_40"
+                    android:background="@color/player_white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/layout_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/a_30"
+                            android:gravity="center_vertical"
+                            android:text="标签介绍："
+                            android:textColor="@color/bh_666666"
+                            android:textSize="@dimen/t_30" />
+
+                        <TextView
+                            android:id="@+id/pr_info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="@color/bh_666666"
+                            android:textSize="@dimen/t_30" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/a_1"
+                        android:layout_marginLeft="@dimen/a_30"
+                        android:background="@color/hn_e5e5e5" />
+                </LinearLayout>
+                <!--奖品等级：-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/a_40"
+                    android:background="@color/player_white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/a_30"
+                            android:gravity="center_vertical"
+                            android:text="奖品等级："
+                            android:textColor="@color/bh_666666"
+                            android:textSize="@dimen/t_32" />
+
+                        <TextView
+                            android:id="@+id/pr_rank"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="@color/bh_666666"
+                            android:textSize="@dimen/t_30" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/a_1"
+                        android:layout_marginLeft="@dimen/a_30"
+                        android:background="@color/hn_e5e5e5" />
+                </LinearLayout>
+                <!--奖品数量：-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/a_40"
+                    android:background="@color/player_white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/a_30"
+                            android:gravity="center_vertical"
+                            android:text="数量："
+                            android:textColor="@color/bh_666666"
+                            android:textSize="@dimen/t_32" />
+
+                        <TextView
+                            android:id="@+id/pr_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text=""
+                            android:textColor="@color/bh_666666"
+                            android:textSize="@dimen/t_30" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/a_1"
+                        android:layout_marginLeft="@dimen/a_30"
+                        android:background="@color/hn_e5e5e5" />
+                </LinearLayout>
+                <!--奖品详细说明：-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/a_40"
+                    android:background="@color/player_white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/a_30"
+                            android:gravity="center_vertical"
+                            android:text="详细说明："
+                            android:textColor="@color/bh_666666"
+                            android:textSize="@dimen/t_32" />
+
+                        <TextView
+                            android:id="@+id/pr_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/a_20"
+                            android:layout_marginBottom="@dimen/a_30"
+                            android:layout_marginLeft="@dimen/a_20"
+                            android:text=""
+                            android:textColor="@color/bh_666666"
+                            android:textSize="@dimen/t_30" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/a_1"
+                        android:layout_marginLeft="@dimen/a_30"
+                        android:background="@color/hn_e5e5e5" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+    <!--</ScrollView>-->
+</LinearLayout>

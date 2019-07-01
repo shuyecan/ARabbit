@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/catalog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/hn_f0f0f0"
+        android:paddingBottom="5dip"
+        android:paddingLeft="5dip"
+        android:paddingTop="5dip"
+        android:text="A"
+        android:textColor="#454545"/>
+
+    <RelativeLayout
+        android:id="@+id/layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="@dimen/a_16"
+            android:gravity="center_vertical"
+            android:paddingBottom="10dip"
+            android:paddingTop="10dip"
+            android:text="hhhh"
+            android:textColor="@color/bh_333333"/>
+
+        <ImageView
+            android:id="@+id/iv_xiala"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/a_20"
+            android:src="@mipmap/btn_xiala_default"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/a_2"
+        android:layout_marginLeft="@dimen/a_20"
+        android:layout_marginRight="@dimen/a_20"
+        android:background="@color/player_grey"/>
+
+
+    <com.arabbit.view.gridview.MyGridView
+        android:id="@+id/gv_sort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/hn_f0f0f0"
+        android:numColumns="4"
+        android:visibility="gone"/>
+
+
+</LinearLayout>

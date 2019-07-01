@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <array name="url">
+        <item>http://ww4.sinaimg.cn/large/006uZZy8jw1faic1xjab4j30ci08cjrv.jpg</item>
+        <item>http://ww4.sinaimg.cn/large/006uZZy8jw1faic21363tj30ci08ct96.jpg</item>
+        <item>http://ww4.sinaimg.cn/large/006uZZy8jw1faic259ohaj30ci08c74r.jpg</item>
+        <item>http://ww4.sinaimg.cn/large/006uZZy8jw1faic2b16zuj30ci08cwf4.jpg</item>
+        <item>http://ww4.sinaimg.cn/large/006uZZy8jw1faic2e7vsaj30ci08cglz.jpg</item>
+    </array>
+    <string-array name="select_type">
+        <item>@string/average_user</item>
+        <item>@string/student</item>
+        <item>@string/shop</item>
+    </string-array>
+    <string-array name="przie_type">
+        <item>@string/const_przie</item>
+        <item>@string/miaob_przie</item>
+    </string-array>
+    <string-array name="przie_rank">
+        <item>一等奖</item>
+        <item>二等奖</item>
+        <item>三等奖</item>
+        <item>鼓励奖</item>
+    </string-array>
+    <array name="type">
+        <item>http://img.zcool.cn/community/01700557a7f42f0000018c1bd6eb23.jpg</item>
+    </array>
+    <array name="url2">
+        <item>http://img.zcool.cn/community/01d28457d621800000018c1bb7877e.jpg</item>
+        <item>http://img.zcool.cn/community/01ae5656e1427f6ac72531cb72bac5.jpg</item>
+    </array>
+    <array name="url4">
+        <item>http://img.zcool.cn/community/01b72057a7e0790000018c1bf4fce0.png</item>
+        <item>http://img.zcool.cn/community/01fca557a7f5f90000012e7e9feea8.jpg</item>
+        <item>http://img.zcool.cn/community/01996b57a7f6020000018c1bedef97.jpg</item>
+        <item>http://img.zcool.cn/community/01700557a7f42f0000018c1bd6eb23.jpg</item>
+    </array>
+    <array name="title">
+        <item>51巅十大星级品牌联</item>
+        <item>十大星级品牌联盟十大星级</item>
+        <item>生命不自己。</item>
+        <item>星级品牌联盟，</item>
+        <item>大星级品牌</item>
+    </array>
+
+
+    <array name="content">
+
+        <item>
+            51巅十大星级品牌联盟，全场2折起十大星级品牌联盟，全场2折起十大星级品牌联盟，全场2折起十大星级品牌联盟，全场2折起十大星级品牌联盟，全场2折起十大星级品牌联盟，全场2折起十大星级品牌联盟，全场2折起十大星级品牌联盟，全场2折起峰钜惠
+            嗨购5折不十大星级品牌联盟，全场2折起十大星级品牌联盟，全场2折起十大星级品牌联盟，全场2折起十大星级品牌联盟，全场2折起十大星级品牌联盟，全场2折起十大星级品牌联盟，全场2折起十大星级品牌联盟，全场2折起十大星级品牌联盟，全场2折起十大星级品牌联盟，全场2折起十大星级品牌联盟，全场2折起十大星级品牌联盟，全场2折起十大星级品牌联盟，全场2折起十大星级品牌联盟，全场2折起十大星级品牌联盟，全场2折起十大星级品牌联盟，全场2折起要停
+        </item>
+    </array>
+
+
+    <array name="demo_list">
+        <item>banner动画预览</item>
+        <item>banner内置样式预览</item>
+        <item>banner指示器位置设置预览</item>
+        <item>banner一些自定义样式方法预览</item>
+        <item>banner加载本地图片</item>
+        <item>自定义ViewPager</item>
+        <item>！！banner更多用法请看文档，这里就不一一列举了！</item>
+    </array>
+    <array name="anim">
+        <item>Default</item>
+        <item>Accordion</item>
+        <item>BackgroundToForeground</item>
+        <item>ForegroundToBackground</item>
+        <item>CubeIn</item>
+        <item>CubeOut</item>
+        <item>DepthPage</item>
+        <item>FlipHorizontal</item>
+        <item>FlipVertical</item>
+        <item>RotateDown</item>
+        <item>RotateUp</item>
+        <item>ScaleInOut</item>
+        <item>Stack</item>
+        <item>Tablet</item>
+        <item>ZoomIn</item>
+        <item>ZoomOut</item>
+        <item>ZoomOutSlide</item>
+    </array>
+    <string-array name="style">
+        <item>NOT_INDICATOR</item>
+        <item>CIRCLE_INDICATOR</item>
+        <item>NUM_INDICATOR</item>
+        <item>NUM_INDICATOR_TITLE</item>
+        <item>CIRCLE_INDICATOR_TITLE</item>
+        <item>CIRCLE_INDICATOR_TITLE_INSIDE</item>
+    </string-array>
+    <string-array name="indicator">
+        <item>LEFT</item>
+        <item>CENTER</item>
+        <item>RIGHT</item>
+    </string-array>
+
+
+    <integer-array name="material_colors">
+        <item>@color/material_red</item>
+        <item>@color/material_green</item>
+        <item>@color/material_blue</item>
+        <item>@color/material_yellow</item>
+    </integer-array>
+
+    <string-array name="date">
+        <item>阿妹</item>
+        <item>阿郎</item>
+        <item>陈奕迅</item>
+        <item>周杰伦</item>
+        <item>曾一鸣</item>
+        <item>成龙</item>
+        <item>王力宏</item>
+        <item>汪峰</item>
+        <item>王菲</item>
+        <item>那英</item>
+        <item>张伟</item>
+        <item>张学友</item>
+        <item>李德华</item>
+        <item>郑源</item>
+        <item>白水水</item>
+        <item>白天不亮</item>
+        <item>陈龙</item>
+        <item>陈丽丽</item>
+        <item>哈林</item>
+        <item>高进</item>
+        <item>高雷</item>
+        <item>阮今天</item>
+        <item>龚琳娜</item>
+        <item>苏醒</item>
+        <item>苏永康</item>
+        <item>陶喆</item>
+        <item>沙宝亮</item>
+        <item>宋冬野</item>
+        <item>宋伟</item>
+        <item>袁成杰</item>
+        <item>戚薇</item>
+        <item>齐大友</item>
+        <item>齐天大圣</item>
+        <item>品冠</item>
+        <item>吴克群</item>
+        <item>BOBO</item>
+        <item>Jobs</item>
+        <item>动力火车</item>
+        <item>伍佰</item>
+        <item>#蔡依林</item>
+        <item>$797835344$</item>
+        <item>Jack</item>
+        <item>~夏先生</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="@color/player_black"  >
+
+    <TextView
+        android:id="@+id/title_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:text="联系人"
+        android:textColor="@color/player_white"
+        android:textSize="@dimen/t_40"/>
+
+    <ImageView
+        android:id="@+id/mcom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="0dp"
+        android:layout_weight="1"
+        android:scaleType="centerInside"
+        android:background="#00000000"
+        android:src="@mipmap/mcom_d" />
+
+    <ImageView
+        android:id="@+id/mfri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/mcom"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="@dimen/a_10"
+        android:layout_marginTop="12dp"
+        android:layout_centerInParent="true"
+        android:layout_weight="1"
+        android:background="#00000000"
+        android:src="@mipmap/mfriend" />
+    <ImageView
+        android:id="@+id/mshop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/mcom"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="12dp"
+        android:layout_centerInParent="true"
+        android:layout_weight="1"
+        android:background="#00000000"
+        android:src="@mipmap/mshop_d" />
+    <ImageView
+        android:id="@+id/search"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/a_10"
+        android:gravity="center"
+        android:padding="@dimen/a_6"
+        android:src="@mipmap/sch"  />
+
+
+</RelativeLayout>

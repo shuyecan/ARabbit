@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/color_EEEEEE"
+              android:orientation="vertical">
+
+    <include layout="@layout/layout_title"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/a_88"
+        android:layout_marginTop="@dimen/a_20"
+        android:background="@color/player_white"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@null"
+            android:drawablePadding="@dimen/a_20"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/a_20"
+            android:text=""
+            android:textColor="@color/bh_333333"
+            android:textColorHint="@color/color_cccccc"
+            android:textSize="@dimen/t_30"/>
+
+        <RelativeLayout
+            android:id="@+id/layout_clear"
+            android:layout_width="@dimen/a_88"
+            android:layout_height="@dimen/a_88">
+
+            <ImageView
+                android:layout_width="@dimen/a_28"
+                android:layout_height="@dimen/a_28"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/btn_clear"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

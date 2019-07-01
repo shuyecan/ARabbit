@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/a_30"
+        android:layout_height="@dimen/a_200"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/pr_image"
+                android:layout_width="@dimen/a_136"
+                android:layout_height="@dimen/a_136"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/a_20"
+                android:layout_marginTop="@dimen/a_30"
+                android:scaleType="fitXY"
+                 />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="95dp"
+                android:layout_marginLeft="@dimen/a_24"
+                android:layout_marginTop="@dimen/a_10"
+                android:layout_toRightOf="@+id/gf_image"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/pr_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/a_20"
+                    android:text=""
+                    android:textColor="@color/black_212121"
+                    android:textSize="@dimen/t_36" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/pr_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/black_212121"
+                        android:textSize="@dimen/t_28" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="奖品等级："
+                        android:textColor="@color/black_212121"
+                        android:textSize="@dimen/t_28" />
+
+                    <TextView
+                        android:id="@+id/pr_rank"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/a_20"
+                        android:text=""
+                        android:textColor="@color/black_212121"
+                        android:textSize="@dimen/t_28" />
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="中奖时间:"
+                        android:textColor="@color/black_212121"
+                        android:textSize="@dimen/t_28" />
+                    <TextView
+                        android:id="@+id/pr_create_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/a_20"
+                        android:text=""
+                        android:textColor="@color/black_212121"
+                        android:textSize="@dimen/t_28" />
+                    </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

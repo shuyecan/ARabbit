@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="6.0dip"
+    android:paddingTop="6.0dip"
+    >
+
+    <ImageView
+        android:id="@+id/user_photo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10.0dip"
+        android:src="@mipmap/denglu_img_logo"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:id="@+id/friend_list_name"
+        android:layout_width="fill_parent"
+        android:layout_height="25.0dip"
+        android:layout_marginLeft="10.0dip"
+        android:layout_marginRight="18.0dip"
+        android:text="离落风清"/>
+
+</RelativeLayout>

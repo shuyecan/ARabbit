@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/a_12"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/a_30"
+            android:text="@string/location_address"
+            android:textColor="@color/bh_999999"
+            android:textSize="@dimen/t_26" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/a_88"
+            android:background="@color/player_white"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/a_22"
+                android:layout_marginTop="@dimen/a_22"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ico_dingwei" />
+
+                <TextView
+                    android:id="@+id/tv_country"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/a_16"
+                    android:text="中国"
+                    android:textColor="@color/bh_333333"
+                    android:textSize="@dimen/a_32" />
+
+                <TextView
+                    android:id="@+id/tv_province"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/a_16"
+                    android:text="广东"
+                    android:textColor="@color/bh_333333"
+                    android:textSize="@dimen/a_32" />
+
+                <TextView
+                    android:id="@+id/tv_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/a_16"
+                    android:text="广州"
+                    android:textColor="@color/bh_333333"
+                    android:textSize="@dimen/a_32" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/a_30"
+            android:text="@string/whole"
+            android:textColor="@color/bh_999999"
+            android:textSize="@dimen/t_26" />
+
+        <ListView
+            android:id="@+id/lv_all"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</LinearLayout>

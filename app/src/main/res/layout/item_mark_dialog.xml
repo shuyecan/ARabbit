@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/a_240"
+    android:layout_height="@dimen/a_240"
+    android:alpha="0.5"
+    android:background="@drawable/shipe_dialog_background_black">
+
+    <com.yq.migratorybird.view.MarkView.DrawCheckMarkView
+        android:id="@+id/mv_check"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/a_44" />
+
+    <com.yq.migratorybird.view.MarkView.DrawCrossMarkView
+        android:id="@+id/mv_cross"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/a_44" />
+
+    <TextView
+        android:id="@+id/tv_behave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mv_check"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/a_24"
+        android:text="已点赞"
+        android:textColor="@color/player_white"
+        android:textSize="@dimen/t_28" />
+
+</RelativeLayout>

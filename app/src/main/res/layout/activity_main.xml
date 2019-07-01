@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/layout_title"
+        android:id="@+id/l_title"
+        />
+
+    <FrameLayout
+        android:id="@+id/fl_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/a_2"
+        android:background="@color/gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_message_icon_click"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/a_6"
+            android:drawableTop="@mipmap/btn_xiaoxi_selected"
+            android:gravity="center"
+            android:padding="@dimen/a_20"
+            android:text="@string/message"
+            android:textColor="@color/color_cccccc"
+            android:textSize="@dimen/t_22" />
+
+        <TextView
+            android:id="@+id/tv_contact_icon_click"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/a_6"
+            android:drawableTop="@mipmap/btn_lianxiren_default"
+            android:gravity="center"
+            android:padding="@dimen/a_20"
+            android:text="@string/contacts"
+            android:textColor="@color/color_cccccc"
+            android:textSize="@dimen/t_22" />
+
+        <TextView
+            android:id="@+id/tv_news_icon_click"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/a_6"
+            android:drawableTop="@mipmap/btn_dongtai_default"
+            android:gravity="center"
+            android:padding="@dimen/a_20"
+            android:text="@string/dynamic"
+            android:textColor="@color/color_cccccc"
+            android:textSize="@dimen/t_22" />
+
+        <TextView
+            android:id="@+id/tv_applcation_icon_click"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/a_6"
+            android:drawableTop="@mipmap/btn_yingyong_default"
+            android:gravity="center"
+            android:padding="@dimen/a_20"
+            android:text="@string/application"
+            android:textColor="@color/color_cccccc"
+            android:textSize="@dimen/t_22" />
+
+        <TextView
+            android:id="@+id/tv_persional_icon_click"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/a_6"
+            android:drawableTop="@mipmap/btn_geren_default"
+            android:gravity="center"
+            android:padding="@dimen/a_20"
+            android:text="@string/perional"
+            android:textColor="@color/color_cccccc"
+            android:textSize="@dimen/t_22" />
+
+    </LinearLayout>
+
+</LinearLayout>

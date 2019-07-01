@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_EEEEEE"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title" />
+
+    <!--国家、地区-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/a_100"
+        android:layout_marginTop="@dimen/a_20"
+        android:background="@color/player_white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/layout_student"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/a_30"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/student"
+                android:textColor="@color/colorblack"
+                android:textSize="@dimen/t_32" />
+
+            <ImageView
+                android:id="@+id/iv_student"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/a_40"
+                android:src="@mipmap/ico_xuanzhong" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/a_1"
+            android:layout_marginLeft="@dimen/a_30"
+            android:background="@color/hn_e5e5e5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_normal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/a_100"
+        android:background="@color/player_white"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/a_30"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/average_user"
+            android:textColor="@color/colorblack"
+            android:textSize="@dimen/t_32" />
+
+        <ImageView
+            android:id="@+id/iv_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/a_40"
+            android:src="@mipmap/ico_xuanzhong"
+            android:visibility="gone" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/a_100"
+        android:background="@color/player_white"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:id="@+id/layout_teacher"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/player_white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/a_30"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/shop"
+                android:textColor="@color/colorblack"
+                android:textSize="@dimen/t_32" />
+
+            <ImageView
+                android:id="@+id/iv_teacher"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/a_40"
+                android:src="@mipmap/ico_xuanzhong"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/a_1"
+            android:layout_marginLeft="@dimen/a_30"
+            android:background="@color/hn_e5e5e5" />
+    </LinearLayout>
+
+
+
+</LinearLayout>
