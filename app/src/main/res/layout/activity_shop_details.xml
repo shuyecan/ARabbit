@@ -297,6 +297,7 @@
             </LinearLayout>
             <!--行业类别-->
             <LinearLayout
+                android:id="@+id/layout_main"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/a_100"
                 android:layout_marginTop="@dimen/a_20"
@@ -454,6 +455,7 @@
             </LinearLayout>
             <!--电话-->
             <LinearLayout
+                android:id="@+id/layout_phone"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/a_100"
                 android:background="@color/player_white"

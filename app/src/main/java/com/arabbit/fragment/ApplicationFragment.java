@@ -55,12 +55,12 @@ public class ApplicationFragment extends BaseFragment {
 
         ApplistEntity applist2 = new ApplistEntity();
         applist2.setAppName(getString(R.string.liuliu_shop));
-        applist2.setUrlId(R.mipmap.btn_zuoweixitong);
+        applist2.setUrlId(R.mipmap.ic_liuliushop);
         list.add(applist2);
 
         ApplistEntity applist3 = new ApplistEntity();
         applist3.setAppName(getString(R.string.garment_mall));
-        applist3.setUrlId(R.mipmap.btn_zuoweixitong);
+        applist3.setUrlId(R.mipmap.ic_garment_mall);
         list.add(applist3);
 
         ApplistEntity applist4 = new ApplistEntity();

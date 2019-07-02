@@ -10,10 +10,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.arabbit.R;
+import com.arabbit.activity.shop.ShopcpActivity;
 import com.arabbit.activity.shop.ShopdetailsActivity;
 import com.arabbit.activity.shop.ShopmbActivity;
 import com.arabbit.activity.shop.ShopptActivity;
-import com.arabbit.activity.shop.ShopcpActivity;
 import com.arabbit.entity.GetUserInfoEntity;
 import com.arabbit.model.Config;
 import com.arabbit.model.IModelResult;
@@ -35,7 +35,7 @@ import static android.app.Activity.RESULT_OK;
  * Created by Administrator on 2018/10/22.
  */
 
-public class ShopDataFragment extends BaseFragment{
+public class ShopDataFragment extends BaseFragment {
 
     @InjectView(R.id.iv_image)
     ImageView ivImage;
@@ -55,7 +55,10 @@ public class ShopDataFragment extends BaseFragment{
     LinearLayout layoutPhone;
 
     SocialModel model;
-
+    @InjectView(R.id.tv_shop_address)
+    TextView tvShopAddress;
+    @InjectView(R.id.tv_phone)
+    TextView tv_phone;
     @Override
     public View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_shop_data, container, false);
@@ -107,11 +110,13 @@ public class ShopDataFragment extends BaseFragment{
         }
         tvAddress.setText(address);
         tvAccount.setText(account);
-        if (type.equals("1")){
+        tvShopAddress.setText(entity.getDetail_address());
+        tv_phone.setText(entity.getPhone());
+        if (type.equals("1")) {
             tvType.setText("公司");
-        }else if(type.equals("2")){
+        } else if (type.equals("2")) {
             tvType.setText("个人");
-        }else if(type.equals("3")){
+        } else if (type.equals("3")) {
             tvType.setText("店铺");
         }
     }
@@ -124,8 +129,10 @@ public class ShopDataFragment extends BaseFragment{
                 Intent infointent = new Intent(mActivity, ShopdetailsActivity.class);
                 infointent.putExtra("user_id", user_id);
                 startActivityForResult(infointent, 701);
+                break;
             case R.id.tv_more:
                 Intent intent = new Intent(mActivity, ShopdetailsActivity.class);
+                intent.putExtra("user_id", user_id);
                 startActivityForResult(intent, 702);
                 break;
             case R.id.miaob_sales:
@@ -154,4 +161,17 @@ public class ShopDataFragment extends BaseFragment{
         }
     }
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        ButterKnife.inject(this, rootView);
+        return rootView;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.reset(this);
+    }
 }

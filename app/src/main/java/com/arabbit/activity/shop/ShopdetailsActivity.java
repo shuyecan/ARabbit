@@ -54,8 +54,8 @@ public class ShopdetailsActivity extends BaseActivity {
     TextView tvNickName;
     @InjectView(R.id.tv_type)
     TextView tvType;
-    @InjectView(R.id.tv_main)
-    TextView tvMain;
+//    @InjectView(R.id.tv_main)
+//    TextView tvMain;
     @InjectView(R.id.tv_account)
     TextView tvAccount;
     @InjectView(R.id.tv_area)
@@ -64,8 +64,8 @@ public class ShopdetailsActivity extends BaseActivity {
     TextView tvPhone;
     @InjectView(R.id.tv_address)
     TextView tvAddress;
-    @InjectView(R.id.tv_profile)
-    TextView tvProfile;
+//    @InjectView(R.id.tv_profile)
+//    TextView tvProfile;
 
 
     @InjectView(R.id.layout_main)
@@ -145,15 +145,15 @@ public class ShopdetailsActivity extends BaseActivity {
     private void initViewList() {
         tvList = new ArrayList<>();
         tvList.add(tvNickName);
-        tvList.add(tvMain);
+       // tvList.add(tvMain);
         tvList.add(tvArea);
         tvList.add(tvPhone);
         tvList.add(tvAddress);
-        tvList.add(tvProfile);
+        //tvList.add(tvProfile);
 
         layoutList = new ArrayList<>();
         layoutList.add(layoutNickName);
-        layoutList.add(layoutMain);
+       // layoutList.add(layoutMain);
         layoutList.add(layoutArea);
         layoutList.add(layoutAddress);
         layoutList.add(layoutPhone);
@@ -223,11 +223,11 @@ public class ShopdetailsActivity extends BaseActivity {
                         }else if(type.equals("3")){
                             tvType.setText("店铺");
                         }
-                        tvMain.setText(main);
+                       // tvMain.setText(main);
                         tvArea.setText(area);
                         tvPhone.setText(phone);
                         tvAddress.setText(address);
-                        tvProfile.setText(profile);
+                       // tvProfile.setText(profile);
 
                     }
 
@@ -252,7 +252,7 @@ public class ShopdetailsActivity extends BaseActivity {
 
     @OnClick({R.id.iv_back, R.id.iv_head_image,
             R.id.layout_nick_name,
-            R.id.layout_phone,
+           R.id.layout_phone,
             R.id.layout_main,
             R.id.layout_area,
             R.id.layout_address,
@@ -340,7 +340,7 @@ public class ShopdetailsActivity extends BaseActivity {
 
                 case UPDATE_MAIN:
                     main = value;
-                    tvMain.setText(value);
+                   // tvMain.setText(value);
                     userInfoEntity.setHomepage(value);
                     break;
                 case UPDATE_PHONE:
@@ -365,7 +365,7 @@ public class ShopdetailsActivity extends BaseActivity {
                     break;
                 case UPDATE_PROFILE:
                     profile = value;
-                    tvProfile.setText(value);
+                    //tvProfile.setText(value);
                     userInfoEntity.setIntroduction(value);
                     break;
                 case UPDATE_PASSWORD:
