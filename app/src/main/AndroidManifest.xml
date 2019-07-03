@@ -161,9 +161,11 @@
         <activity android:name=".activity.persional.LookSingleAlbumActivity" />
         <activity android:name=".activity.promotion.UploadVideoActivity" />
         <activity android:name=".activity.persional.LookVideoListActivity" />
-        <activity android:hardwareAccelerated="true"
+        <activity
+            android:name=".activity.webview.BaseWebViewActivity"
             android:configChanges="orientation|screenSize"
-            android:name=".activity.webview.BaseWebViewActivity"></activity>
+            android:hardwareAccelerated="true" />
+        <activity android:name=".activity.shop.ShopalbumActivity"></activity>
     </application>
 
 </manifest>

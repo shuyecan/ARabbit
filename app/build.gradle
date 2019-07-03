@@ -55,4 +55,9 @@ dependencies {
     compile 'com.just.agentweb:agentweb:4.0.2'
     compile 'com.just.agentweb:download:4.0.2'
     compile 'com.just.agentweb:filechooser:4.0.2'
+
+    compile 'com.github.afollestad.material-dialogs:core:0.8.5.2'
+
+    compile 'com.jph.takephoto:takephoto_library:4.0.3'
+    compile 'com.yanzhenjie:permission:1.0.5'
 }
