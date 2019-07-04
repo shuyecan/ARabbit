@@ -7,14 +7,24 @@
     <include
         layout="@layout/layout_title"
         ></include>
-    <ScrollView
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_album"
+        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <LinearLayout
-            android:id="@+id/llImages"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    </ScrollView>
 
+    </android.support.v7.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/btn_savealbum"
+        android:background="@drawable/shipe_btn_blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="添加照片"
+        android:textColor="@color/white"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="@dimen/a_15"
+        android:layout_marginRight="@dimen/a_15"
+        />
 </LinearLayout>

@@ -80,7 +80,6 @@ public class ContactFragment extends BaseFragment {
      * 显示店铺列表页面
      */
     private void showshopView(){
-
         mshop.setImageResource(R.mipmap.mshop);
         mfrip.setImageResource(R.mipmap.mfriend_d);
         mcomp.setImageResource(R.mipmap.mcom_d);
