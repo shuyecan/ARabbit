@@ -38,6 +38,7 @@ public class ShopContactFragment extends BaseFragment{
             case R.id.store_shop:
                 Intent sintent = new Intent(mActivity, StoreShopActivity.class);
                 startActivity(sintent);
+                break;
             case R.id.near_shop:
                 Intent nintent = new Intent(mActivity, StoreNearShopActivity.class);
                 startActivity(nintent);

@@ -4,13 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 
+import com.amap.api.location.AMapLocation;
 import com.arabbit.R;
 import com.arabbit.activity.BaseActivity;
+import com.arabbit.adapter.StoreShopAdapter;
 import com.arabbit.adapter.StorembShopAdapter;
 import com.arabbit.entity.UserInfoEntity;
 import com.arabbit.model.SocialModel;
+import com.arabbit.utils.LocationUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,33 +28,30 @@ import butterknife.InjectView;
  */
 
 public class StorembShopActivity extends BaseActivity {
-    @InjectView(R.id.lv_shop)
-    ListView lvShop;
     SocialModel model;
     List<UserInfoEntity> userEntitys;
-    private StorembShopAdapter adapter;
+    @InjectView(R.id.sch_adress)
+    EditText schAdress;
+    private StoreShopAdapter adapter;
+    private double londe,latud;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store_list);
         ButterKnife.inject(this);
         model = new SocialModel(this);
-        userEntitys = new ArrayList<>();
-        adapter = new StorembShopAdapter(userEntitys,StorembShopActivity.this);
-        lvShop.setAdapter(adapter);
-        lvShop.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        initDate();
+    }
+
+
+    private void initDate() {
+        LocationUtils.getLocation(new LocationUtils.MyLocationListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                UserInfoEntity userinfoEntity = (UserInfoEntity)adapterView.getAdapter().getItem(i);
-                Intent intent = new Intent(StorembShopActivity.this, ShopdataActivity.class);
-                int user_id = userinfoEntity.getUser_id();
-                intent.putExtra("user_id",user_id+"");
-                startActivity(intent);
-
-
-
+            public void result(AMapLocation location) {
+                latud = location.getLatitude();//获取纬度
+                londe = location.getLongitude();//获取经度
+                schAdress.setText(londe+","+latud);
             }
         });
-
     }
 }

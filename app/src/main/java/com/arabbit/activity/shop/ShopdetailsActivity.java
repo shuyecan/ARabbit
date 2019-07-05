@@ -24,6 +24,7 @@ import com.arabbit.model.SocialModel;
 import com.arabbit.net.ApiException;
 import com.arabbit.utils.CommonUtils;
 import com.arabbit.utils.ImgLoaderUtils;
+import com.arabbit.utils.LocationUtils;
 import com.arabbit.utils.SPUtils;
 import com.arabbit.utils.ToastUtils;
 import com.arabbit.view.dialog.address.AddressDialog;
@@ -84,7 +85,8 @@ public class ShopdetailsActivity extends BaseActivity {
     LinearLayout layoutPassword;
     @InjectView(R.id.layout_update_password)
     LinearLayout layoutUpdatePassword;
-
+    @InjectView(R.id.tv_posit)
+    LinearLayout tv_posit;
 
     SocialModel model;
     public static final int UPDATE_HEAD_IMAGE = 101;
@@ -257,7 +259,8 @@ public class ShopdetailsActivity extends BaseActivity {
             R.id.layout_area,
             R.id.layout_address,
             R.id.layout_profile,
-            R.id.layout_update_password})
+            R.id.layout_update_password
+            ,R.id.tv_posit})
     public void onClick(View view) {
         Intent intent = new Intent();
         switch (view.getId()) {
@@ -308,6 +311,14 @@ public class ShopdetailsActivity extends BaseActivity {
                 intent.setClass(mActivity, UpdatePasswordActivity.class);
                 intent.putExtra("password", password);
                 startActivityForResult(intent, UPDATE_PASSWORD);
+                break;
+            case R.id.tv_posit:
+                if(LocationUtils.isGdMapInstalled()){
+                    LocationUtils.openGaoDeNavi(getApplicationContext(),0,0,0,0,area+tvAddress.getText());
+                }else {
+                    ToastUtils.showToastShort("您还未安装高德地图");
+                }
+
                 break;
         }
     }

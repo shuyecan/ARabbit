@@ -17,6 +17,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.amap.api.location.AMapLocation;
 import com.arabbit.R;
 import com.arabbit.activity.login.LoginActivity;
 import com.arabbit.fragment.ApplicationFragment;
@@ -26,6 +27,7 @@ import com.arabbit.fragment.PersionDataFragment;
 import com.arabbit.fragment.PersionInfoFragment;
 import com.arabbit.fragment.ShopDataFragment;
 import com.arabbit.utils.ActivityUtils;
+import com.arabbit.utils.LocationUtils;
 import com.arabbit.utils.SPUtils;
 import com.arabbit.view.dialog.DialogWithContent;
 
@@ -127,7 +129,6 @@ public class MainActivity extends BaseActivity {
         } else {
             changeTab(3);
         }
-
     }
 
     public void showpersion() {

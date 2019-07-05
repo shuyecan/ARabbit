@@ -2,13 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:descendantFocusability="blocksDescendants"
     android:orientation="vertical">
     <include layout="@layout/layout_title1" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:orientation="vertical">
             <LinearLayout
                 android:id="@+id/lay_editor"
@@ -38,6 +39,7 @@
                         android:layout_width="@dimen/a_400"
                         android:layout_height="match_parent"
                         android:text=""
+                        android:hint="请输入经纬度，按','隔开"
                         android:textColor="@color/black_212121"
                         android:textSize="@dimen/t_28" />
 
@@ -101,7 +103,6 @@
                     android:id="@+id/bt_sch"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/a_50"
                     android:textColor="@color/player_white"
                     android:text="查找"
                     android:src="@mipmap/chaz"/>
@@ -113,10 +114,10 @@
                 android:layout_marginTop="@dimen/a_20"
                 android:background="@color/hn_e5e5e5" />
 
-            <com.arabbit.view.ListViewForScrollView
+            <android.support.v7.widget.RecyclerView
                 android:id="@+id/lv_shop"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </LinearLayout>
 
 

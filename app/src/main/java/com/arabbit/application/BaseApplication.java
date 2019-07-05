@@ -7,6 +7,7 @@ import android.support.multidex.MultiDex;
 import android.util.DisplayMetrics;
 
 import com.arabbit.utils.FileUtils;
+import com.arabbit.utils.LocationUtils;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
 import com.nostra13.universalimageloader.cache.disc.naming.HashCodeFileNameGenerator;
 import com.nostra13.universalimageloader.cache.memory.impl.UsingFreqLimitedMemoryCache;
@@ -57,7 +58,7 @@ public class BaseApplication extends Application {
         mainHandler = new Handler();
         getScreen(this);
         MultiDex.install(this);
-
+        LocationUtils.init(this);
         //初始化图片下载的框架：
         initImageLoader(getApplicationContext());
 
