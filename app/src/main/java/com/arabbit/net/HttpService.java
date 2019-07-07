@@ -23,6 +23,7 @@ import com.arabbit.entity.SeatListEntity;
 import com.arabbit.entity.GiftListEntity;
 import com.arabbit.entity.ProtionListEntity;
 import com.arabbit.entity.GetUserCardEntity;
+import com.arabbit.entity.ShopImgEntity;
 import com.arabbit.entity.ShopmbListEntity;
 import com.arabbit.entity.ShopmbgoodListEntity;
 import com.arabbit.entity.ShopprListEntity;
@@ -1241,6 +1242,24 @@ public interface HttpService {
                                                               @Field("client") String client,
                                                               @Field("pageno") int pageno,
                                                               @Field("pr_id") String pt_id
+    );
+
+    //修改店铺图片
+    @FormUrlEncoded
+    @POST("shop/updateShopImg")
+    Observable<BaseResult<EmptyEntity>> updateShopImg(@Field("version") String version,
+                                                              @Field("client") String client,
+                                                           @Field("user_id") String user_id,
+                                                              @Field("imgs") String imgs
+    );
+
+
+    //获取店铺图片
+    @FormUrlEncoded
+    @POST("shop/getShopImgs")
+    Observable<BaseResult<ShopImgEntity>> getShopImgs(@Field("version") String version,
+                                                      @Field("client") String client,
+                                                      @Field("user_id") String user_id
     );
 
 

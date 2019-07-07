@@ -25,12 +25,12 @@ import com.arabbit.entity.RegisterFromPhoneEntity;
 import com.arabbit.entity.SeatListEntity;
 import com.arabbit.entity.GiftListEntity;
 import com.arabbit.entity.ProtionListEntity;
+import com.arabbit.entity.ShopImgEntity;
 import com.arabbit.entity.ShopcpListEntity;
 import com.arabbit.entity.ShopmbListEntity;
 import com.arabbit.entity.ShopmbgoodListEntity;
 import com.arabbit.entity.ShopprListEntity;
 import com.arabbit.entity.ShopptListEntity;
-import com.arabbit.entity.UserEntity;
 import com.arabbit.entity.UserHadgiftEntity;
 import com.arabbit.entity.UserHadprizeEntity;
 import com.arabbit.entity.UserHadproEntity;
@@ -41,6 +41,7 @@ import com.arabbit.rx.CommonSubscriber;
 import com.arabbit.rx.CommonTransformer;
 import com.arabbit.utils.SPUtils;
 
+import java.util.Arrays;
 import java.util.List;
 
 import rx.Subscription;
@@ -232,6 +233,58 @@ public class SocialModel extends SubModel {
 
                     @Override
                     public void onNext(GetUserInfoEntity sendSmsCode) {
+                        callback.OnSuccess(sendSmsCode);
+                    }
+                });
+        callback.AddSubscription(subscriber);
+    }
+
+
+
+    //修改店铺图片
+    public void updateShopShopImgs(String[] file,final IModelResult<EmptyEntity> callback) {
+        String user_id = SPUtils.getString("user_id", "");
+        String token = SPUtils.getString("token", "");
+        String imgs  = Arrays.toString(file);
+        imgs = imgs.replace("[","[\"");
+        imgs = imgs.replace("]","\"]");
+        imgs = imgs.replace(",","\",\"");
+        Subscription subscriber = httpService.updateShopImg(version, client, user_id,imgs )
+                .observeOn(AndroidSchedulers.mainThread())
+                .unsubscribeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .compose(new CommonTransformer<EmptyEntity>())
+                .subscribe(new CommonSubscriber<EmptyEntity>(viewload) {
+                    @Override
+                    protected void onError(ApiException e) {
+                        callback.OnError(e);
+                    }
+
+                    @Override
+                    public void onNext(EmptyEntity sendSmsCode) {
+                        callback.OnSuccess(sendSmsCode);
+                    }
+                });
+        callback.AddSubscription(subscriber);
+    }
+
+
+    public void getShopImgs(final IModelResult<ShopImgEntity> callback) {
+        String user_id = SPUtils.getString("user_id", "");
+        String token = SPUtils.getString("token", "");
+        Subscription subscriber = httpService.getShopImgs(version, client, user_id)
+                .observeOn(AndroidSchedulers.mainThread())
+                .unsubscribeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .compose(new CommonTransformer<ShopImgEntity>())
+                .subscribe(new CommonSubscriber<ShopImgEntity>(viewload) {
+                    @Override
+                    protected void onError(ApiException e) {
+                        callback.OnError(e);
+                    }
+
+                    @Override
+                    public void onNext(ShopImgEntity sendSmsCode) {
                         callback.OnSuccess(sendSmsCode);
                     }
                 });
