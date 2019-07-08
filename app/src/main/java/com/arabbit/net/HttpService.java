@@ -1263,6 +1263,15 @@ public interface HttpService {
     );
 
 
+    //获取店铺信息
+    @FormUrlEncoded
+    @POST("shop/getInfo")
+    Observable<BaseResult<ShopImgEntity>> getInfo(@Field("version") String version,
+                                                      @Field("client") String client,
+                                                      @Field("user_id") String user_id
+    );
+
+
 
 
 
