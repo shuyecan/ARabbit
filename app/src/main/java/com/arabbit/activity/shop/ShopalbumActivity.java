@@ -14,9 +14,11 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import com.arabbit.R;
@@ -25,6 +27,7 @@ import com.arabbit.adapter.ShopalbumAdapter;
 import com.arabbit.entity.BaseResult;
 import com.arabbit.entity.EmptyEntity;
 import com.arabbit.entity.ShopImgEntity;
+import com.arabbit.model.Config;
 import com.arabbit.model.IModelResult;
 import com.arabbit.model.SocialModel;
 import com.arabbit.net.ApiException;
@@ -74,12 +77,13 @@ public class ShopalbumActivity extends BaseActivity implements TakePhoto.TakeRes
     private Uri imageUri;//图片保存路径\
     ShopalbumAdapter adapter;
      List<String> urllist = new ArrayList<>();
-
+    List<String> locatImglist = new ArrayList<>();
     List<String> imglist = new ArrayList<>();
     SocialModel model;
     InvokeParam invokeParam;
     public DialogHelper dialogHelper;
     public UploadPicEntity result;
+    int imgnum = 0,imgNoUpdate = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,7 +115,20 @@ public class ShopalbumActivity extends BaseActivity implements TakePhoto.TakeRes
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerAlbum.setLayoutManager(layoutManager);
         recyclerAlbum.setAdapter(adapter);
-
+        adapter.setOnclick(new ShopalbumAdapter.ClickInterface() {
+            @Override
+            public void onItemClick(View view, int position) {
+                    if(!urllist.get(position).contains("/storage/emulated/0/")){
+                        imglist.remove(position);
+                        adapter.deleteitem(position);
+                        imgNoUpdate--;
+                    }else {
+                        urllist.remove(position);
+                        adapter.notifyDataSetChanged();
+                        locatImglist.remove(position - imgNoUpdate-1);
+                    }
+            }
+        });
         getShopImgs();
     }
 
@@ -151,6 +168,7 @@ public class ShopalbumActivity extends BaseActivity implements TakePhoto.TakeRes
     public void takeSuccess(TResult result) {
         if (result != null) {
             String url = result.getImage().getOriginalPath();
+            locatImglist.add(url);
             urllist.add(url);
             adapter.notifyDataSetChanged();
         }
@@ -175,10 +193,10 @@ public class ShopalbumActivity extends BaseActivity implements TakePhoto.TakeRes
                 finish();
                 break;
             case R.id.tv_add:
-                if(urllist.size()>0){
+                if(urllist.size()<10){
                     uploadImage();
                 }else {
-                    ToastUtils.showToastShort("您未做修改");
+                    ToastUtils.showToastShort("最多不超过九张照片");
                 }
                 break;
             case R.id.btn_savealbum:
@@ -195,12 +213,15 @@ public class ShopalbumActivity extends BaseActivity implements TakePhoto.TakeRes
                 dialogHelper.dismissProgressDialog(mActivity);
                 dialogHelper = null;
             }
+
             dialogHelper = new DialogHelper();
             dialogHelper.showProgressDialog(mActivity, R.string.upload_pictures, false);
-            for (int i = 0;i<urllist.size();i++) {
-
-                final int finalI = i;
-                HttpClientUtil.upload(new File(urllist.get(i)), "avatar_img", new Callback() {
+            if(locatImglist.size()==0){
+                myHandler.sendEmptyMessage(1);
+                return;
+            }
+            for (int i = 0;i<locatImglist.size();i++) {
+                HttpClientUtil.upload(new File(locatImglist.get(i)), "avatar_img", new Callback() {
                     @Override
                     public void onFailure(Call call, IOException e) {
                         Log.e("aaa","上传的图片sd卡路径onFailure：");
@@ -210,11 +231,13 @@ public class ShopalbumActivity extends BaseActivity implements TakePhoto.TakeRes
                     @Override
                     public void onResponse(Call call, Response response) throws IOException {
                         result = new Gson().fromJson(response.body().string(), UploadPicEntity.class);
-                        imglist.add(result.getData().getUrl());
+                        imglist.add(result.getData().getUrl().trim());
                         Log.e("aaa",result+"上传的图片sd卡路径onResponse：");
-                        if(finalI ==urllist.size()-1){
+                        if(imgnum ==locatImglist.size()-1){
                             myHandler.sendEmptyMessage(1);
+                            imgnum=0;
                         }
+                        imgnum++;
                     }
                 });
 
@@ -231,7 +254,16 @@ public class ShopalbumActivity extends BaseActivity implements TakePhoto.TakeRes
         model.getShopImgs(new IModelResult<ShopImgEntity>() {
             @Override
             public void OnSuccess(ShopImgEntity emptyEntity) {
-
+                if(emptyEntity.getStoreimg().size()>0&&!"".equals(emptyEntity.getStoreimg().get(0))){
+                    urllist.clear();
+                    imglist.clear();
+                    imgNoUpdate = emptyEntity.getStoreimg().size()-1;
+                    imglist.addAll(emptyEntity.getStoreimg());
+                   for (String url:emptyEntity.getStoreimg()){
+                       urllist.add(Config.IMG_URL+url.trim());
+                   }
+                    adapter.notifyDataSetChanged();
+                }
             }
 
             @Override
@@ -254,7 +286,7 @@ public class ShopalbumActivity extends BaseActivity implements TakePhoto.TakeRes
         model.updateShopShopImgs(files, new IModelResult<EmptyEntity>() {
             @Override
             public void OnSuccess(EmptyEntity emptyEntity) {
-                imglist.clear();
+                locatImglist.clear();
                 ToastUtils.showToastShort(R.string.update_success);
             }
 
@@ -286,6 +318,10 @@ public class ShopalbumActivity extends BaseActivity implements TakePhoto.TakeRes
             avatarActivity.dialogHelper.dismissProgressDialog(avatarActivity);
             switch (msg.what) {
                 case 1:
+                    if(avatarActivity.result==null){
+                        avatarActivity.updateShopimgs();
+                        return;
+                    }
                     String code = avatarActivity.result.getCode();
                     if (code.equals("1")) {
                         avatarActivity.updateShopimgs();

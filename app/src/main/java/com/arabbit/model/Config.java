@@ -13,8 +13,8 @@ public class Config {
 
 //   public static final String BASE_URL = "http://fa.liuliut.com/public/index.php/";
 //   public static final String IMG_URL = "http://fa.liuliut.com/public/";
-    public static final String BASE_URL = "http://192.168.3.5/liuliutu/public/index.php/";
-    public static final String IMG_URL = "http://192.168.3.5/liuliutu/public/";
+    public static final String BASE_URL = "http://192.168.3.56/liuliutu/public/index.php/";
+    public static final String IMG_URL = "http://192.168.3.56/liuliutu/public/";
 //    public static final String BASE_URL = "http://10.0.0.2/public/index.php/";
 //    public static final String IMG_URL = "http://10.0.0.2/public/";
 }
