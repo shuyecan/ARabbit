@@ -24,6 +24,7 @@ import com.arabbit.entity.GiftListEntity;
 import com.arabbit.entity.ProtionListEntity;
 import com.arabbit.entity.GetUserCardEntity;
 import com.arabbit.entity.ShopImgEntity;
+import com.arabbit.entity.ShopInfoEntity;
 import com.arabbit.entity.ShopmbListEntity;
 import com.arabbit.entity.ShopmbgoodListEntity;
 import com.arabbit.entity.ShopprListEntity;
@@ -831,7 +832,7 @@ public interface HttpService {
     @POST("shop/delShopmb")
     Observable<BaseResult<ShopmbListEntity.ListsBean>> delShopmb(@Field("version") String version,
                                                                  @Field("client") String client,
-                                                                 @Field("mb_id") String mb_id
+                                                                     @Field("mb_id") String mb_id
 
     );
 
@@ -1266,10 +1267,110 @@ public interface HttpService {
     //获取店铺信息
     @FormUrlEncoded
     @POST("shop/getInfo")
-    Observable<BaseResult<ShopImgEntity>> getInfo(@Field("version") String version,
-                                                      @Field("client") String client,
-                                                      @Field("user_id") String user_id
+    Observable<BaseResult<ShopInfoEntity>> getInfo(@Field("version") String version,
+                                                   @Field("client") String client,
+                                                   @Field("user_id") String user_id
     );
+    //修改营业状态
+    @FormUrlEncoded
+    @POST("shop/updateInfo")
+    Observable<BaseResult<EmptyEntity>> updateInfoForstatus(@Field("version") String version,
+                                                   @Field("client") String client,
+                                                   @Field("user_id") String user_id,
+                                                            @Field("status") int status
+    );
+
+
+    //修改店铺经纬度
+    @FormUrlEncoded
+    @POST("shop/updateInfo")
+    Observable<BaseResult<EmptyEntity>> updateInfoForaddress(@Field("version") String version,
+                                                            @Field("client") String client,
+                                                            @Field("user_id") String user_id,
+                                                             @Field("lat") String lat,
+                                                               @Field("lng") String lng
+    );
+
+
+    //获取关注店铺
+    @FormUrlEncoded
+    @POST("shop/getFocusShopList")
+    Observable<BaseResult<List<ShopInfoEntity>>> getFocusShopList(@Field("version") String version,
+                                                            @Field("client") String client,
+                                                            @Field("user_id") String user_id
+    );
+
+    //添加关注店铺
+    @FormUrlEncoded
+    @POST("shop/addFocusShop")
+    Observable<BaseResult<EmptyEntity>> addFocusShop(@Field("version") String version,
+                                                                  @Field("client") String client,
+                                                                  @Field("user_id") String user_id,
+                                                                    @Field("shop_user_id") int shop_user_id
+    );
+
+
+    //删除关注店铺
+    @FormUrlEncoded
+    @POST("shop/delFocusShop")
+    Observable<BaseResult<EmptyEntity>> delFocusShop(@Field("version") String version,
+                                                     @Field("client") String client,
+                                                     @Field("user_id") String user_id,
+                                                     @Field("shop_user_id") int shop_user_id
+    );
+
+
+    //获取附近店铺
+    @FormUrlEncoded
+    @POST("shop/getNearbyShopList")
+    Observable<BaseResult<List<ShopInfoEntity>>> getNearbyShopList(@Field("version") String version,
+                                                     @Field("client") String client,
+                                                     @Field("lng") String lng,
+                                                     @Field("lat") String lat,
+                                                          @Field("far") int far,
+                                                          @Field("type") String type
+    );
+
+    //获取附近的秒爆商品店铺
+    @FormUrlEncoded
+    @POST("shop/getNearbyMbList")
+    Observable<BaseResult<List<ShopInfoEntity>>> getNearbyMbList(@Field("version") String version,
+                                                                   @Field("client") String client,
+                                                                   @Field("lng") String lng,
+                                                                   @Field("lat") String lat,
+                                                                   @Field("far") int far,
+                                                                   @Field("type") String type
+    );
+
+
+    //获取附近的打折商品店铺
+    @FormUrlEncoded
+    @POST("shop/getNearbyCpList")
+    Observable<BaseResult<List<ShopInfoEntity>>> getNearbyCpList(@Field("version") String version,
+                                                                 @Field("client") String client,
+                                                                 @Field("lng") String lng,
+                                                                 @Field("lat") String lat,
+                                                                 @Field("far") int far,
+                                                                 @Field("type") String type
+    );
+
+
+    //获取附近的抽奖活动店铺
+    @FormUrlEncoded
+    @POST("shop/getNearbyPtList")
+    Observable<BaseResult<List<ShopInfoEntity>>> getNearbyPtList(@Field("version") String version,
+                                                                 @Field("client") String client,
+                                                                 @Field("lng") String lng,
+                                                                 @Field("lat") String lat,
+                                                                 @Field("far") int far,
+                                                                 @Field("type") String type
+    );
+
+
+
+
+
+
 
 
 

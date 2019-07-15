@@ -1,9 +1,7 @@
 package com.arabbit.fragment;
 
-import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.amap.api.location.AMapLocation;
 import com.arabbit.R;
 import com.arabbit.activity.address.AddressActivity;
 import com.arabbit.activity.persional.PhoneActivity;
@@ -21,19 +20,22 @@ import com.arabbit.activity.shop.ShopcpActivity;
 import com.arabbit.activity.shop.ShopdetailsActivity;
 import com.arabbit.activity.shop.ShopmbActivity;
 import com.arabbit.activity.shop.ShopptActivity;
+import com.arabbit.entity.EmptyEntity;
 import com.arabbit.entity.GetUserInfoEntity;
+import com.arabbit.entity.ShopInfoEntity;
 import com.arabbit.model.Config;
 import com.arabbit.model.IModelResult;
 import com.arabbit.model.SocialModel;
 import com.arabbit.net.ApiException;
 import com.arabbit.utils.CommonUtils;
 import com.arabbit.utils.ImgLoaderUtils;
+import com.arabbit.utils.LocationUtils;
 import com.arabbit.utils.SPUtils;
 import com.arabbit.utils.ToastUtils;
+import com.bumptech.glide.Glide;
 import com.codbking.widget.DatePickDialog;
 import com.codbking.widget.OnSureLisener;
 import com.codbking.widget.bean.DateType;
-import com.yanzhenjie.permission.AndPermission;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -82,8 +84,33 @@ public class ShopDataFragment extends BaseFragment {
     TextView tvShopAddress;
     @InjectView(R.id.tv_phone)
     TextView tv_phone;
-    String phone,address_detail,address;
+    String phone, address_detail, address;
     GetUserInfoEntity mentity;
+    @InjectView(R.id.iv_bmgood)
+    ImageView ivBmgood;
+    @InjectView(R.id.iv_bmgood2)
+    ImageView ivBmgood2;
+    @InjectView(R.id.iv_bmgood3)
+    ImageView ivBmgood3;
+    @InjectView(R.id.iv_prgood)
+    ImageView ivPrgood;
+    @InjectView(R.id.iv_prgood2)
+    ImageView ivPrgood2;
+    @InjectView(R.id.iv_prgood3)
+    ImageView ivPrgood3;
+    @InjectView(R.id.iv_cpgood)
+    ImageView ivCpgood;
+    @InjectView(R.id.iv_cpgood2)
+    ImageView ivCpgood2;
+    @InjectView(R.id.iv_cpgood3)
+    ImageView ivCpgood3;
+    @InjectView(R.id.iv_shop_img)
+    ImageView ivShopImg;
+    @InjectView(R.id.iv_shop_img2)
+    ImageView ivShopImg2;
+    @InjectView(R.id.iv_shop_img3)
+    ImageView ivShopImg3;
+
     @Override
     public View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_shop_data, container, false);
@@ -92,6 +119,34 @@ public class ShopDataFragment extends BaseFragment {
         getUserInfo();
         return view;
     }
+
+    private void getShopInfo() {
+        try {
+            model.getShopInfo(new IModelResult<ShopInfoEntity>() {
+                @Override
+                public void OnSuccess(ShopInfoEntity entity) {
+                    if (!CommonUtils.isNull(entity)) {
+                        initShopInfo(entity);
+                    }
+
+                }
+
+                @Override
+                public void OnError(ApiException e) {
+                    ToastUtils.showToastShort(e.message);
+                }
+
+                @Override
+                public void AddSubscription(Subscription subscription) {
+                    addSubscription(subscription);
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
 
     public void getUserInfo() {
         String user_id = SPUtils.getString("user_id", "");
@@ -122,13 +177,79 @@ public class ShopDataFragment extends BaseFragment {
 
     }
 
+
+    private void initShopInfo(ShopInfoEntity entity) {
+        if (entity.getStatus() == 1) {
+            tv_stat.setText("正常营业");
+        } else if(entity.getStatus()==2){
+            tv_stat.setText("暂停营业");
+        }
+        try{
+            Glide.with(getActivity()).load(Config.IMG_URL+entity.getMbimg().get(0)).into(ivBmgood);
+            Glide.with(getActivity()).load(Config.IMG_URL+entity.getMbimg().get(1)).into(ivBmgood2);
+            Glide.with(getActivity()).load(Config.IMG_URL+entity.getMbimg().get(2)).into(ivBmgood3);
+        }catch (Exception e){
+
+        }
+        try{
+            Glide.with(getActivity()).load(Config.IMG_URL+entity.getCpimg().get(0)).into(ivCpgood);
+            Glide.with(getActivity()).load(Config.IMG_URL+entity.getCpimg().get(1)).into(ivCpgood2);
+            Glide.with(getActivity()).load(Config.IMG_URL+entity.getCpimg().get(2)).into(ivCpgood3);
+        }
+        catch (Exception e){
+
+        }
+        try{
+            Glide.with(getActivity()).load(Config.IMG_URL+entity.getPrimg().get(0)).into(ivPrgood);
+            Glide.with(getActivity()).load(Config.IMG_URL+entity.getPrimg().get(1)).into(ivPrgood2);
+            Glide.with(getActivity()).load(Config.IMG_URL+entity.getPrimg().get(2)).into(ivPrgood3);
+        }
+        catch (Exception e){
+
+        }
+
+        try{
+            Glide.with(getActivity()).load(Config.IMG_URL+entity.getStoreimg().get(0)).into(ivShopImg);
+            Glide.with(getActivity()).load(Config.IMG_URL+entity.getStoreimg().get(1)).into(ivShopImg2);
+            Glide.with(getActivity()).load(Config.IMG_URL+entity.getStoreimg().get(2)).into(ivShopImg3);
+        }
+        catch (Exception e){
+
+        }
+
+        LocationUtils.getLocation(new LocationUtils.MyLocationListener() {
+            @Override
+            public void result(AMapLocation location) {
+                double latud = location.getLatitude();//获取纬度
+                double londe = location.getLongitude();//获取经度
+                model.updateInfoForaddress(latud+"", londe+"", new IModelResult<EmptyEntity>() {
+                    @Override
+                    public void OnSuccess(EmptyEntity emptyEntity) {
+
+                    }
+
+                    @Override
+                    public void OnError(ApiException e) {
+
+                    }
+
+                    @Override
+                    public void AddSubscription(Subscription subscription) {
+
+                    }
+                });
+            }
+        });
+    }
+
+
     private void initUserInfo(GetUserInfoEntity entity) {
         String url = entity.getAvatar_img();
         String name = entity.getNickname();
         String account = entity.getAccount();
         String type = CommonUtils.formatNull(entity.getRole());
-         address = entity.getAddress();
-        phone= entity.getPhone();
+        address = entity.getAddress();
+        phone = entity.getPhone();
         address_detail = entity.getDetail_address();
         tvName.setText(name);
         if (!CommonUtils.isNull(url)) {
@@ -145,12 +266,13 @@ public class ShopDataFragment extends BaseFragment {
             tvType.setText("个人");
         } else if (type.equals("3")) {
             tvType.setText("店铺");
+            getShopInfo();
         }
     }
 
-    @OnClick({R.id.iv_image, R.id.tv_more, R.id.miaob_sales, R.id.layout_prize, R.id.layout_coupon,R.id.tv_shop_address,R.id.tv_phone
-    ,R.id.shop_stat
-    ,R.id.opening,R.id.layout_album})
+    @OnClick({R.id.iv_image, R.id.tv_more, R.id.miaob_sales, R.id.layout_prize, R.id.layout_coupon, R.id.tv_shop_address, R.id.tv_phone
+            , R.id.shop_stat
+            , R.id.opening, R.id.layout_album})
     public void onClick(View view) {
         String user_id = SPUtils.getString("user_id", "");
         Intent intent = new Intent();
@@ -201,8 +323,24 @@ public class ShopDataFragment extends BaseFragment {
                         .itemsCallbackSingleChoice(-1, new MaterialDialog.ListCallbackSingleChoice() {
                             @Override
                             public boolean onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
-                                if(text!=null&&!"".equals(text.toString())) {
+                                if (text != null && !"".equals(text.toString())) {
                                     tv_stat.setText(text.toString());
+                                    model.updateInfoForstatus(which + 1, new IModelResult<EmptyEntity>() {
+                                        @Override
+                                        public void OnSuccess(EmptyEntity emptyEntity) {
+                                            ToastUtils.showToastShort("修改成功");
+                                        }
+
+                                        @Override
+                                        public void OnError(ApiException e) {
+
+                                        }
+
+                                        @Override
+                                        public void AddSubscription(Subscription subscription) {
+
+                                        }
+                                    });
                                 }
                                 return true;
                             }
@@ -221,12 +359,12 @@ public class ShopDataFragment extends BaseFragment {
                         .itemsCallbackSingleChoice(-1, new MaterialDialog.ListCallbackSingleChoice() {
                             @Override
                             public boolean onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
-                                switch (which){
+                                switch (which) {
                                     case 0:
-                                        setMorningtime(text.toString(),tv_opening);
+                                        setMorningtime(text.toString(), tv_opening);
                                         break;
                                     case 1:
-                                        setMorningtime(text.toString(),tv_opening);
+                                        setMorningtime(text.toString(), tv_opening);
                                         break;
 
                                     case 2:
@@ -245,7 +383,7 @@ public class ShopDataFragment extends BaseFragment {
         }
     }
 
-    private void setMorningtime(final String text, final TextView tv){
+    private void setMorningtime(final String text, final TextView tv) {
         DatePickDialog dialog = new DatePickDialog(getActivity());
         dialog.setYearLimt(5);
         dialog.setTitle("早上营业时间");
@@ -258,13 +396,13 @@ public class ShopDataFragment extends BaseFragment {
                 long time = date.getTime();
                 SimpleDateFormat simpledateformat = new SimpleDateFormat("HH:mm");
                 String format = simpledateformat.format(new Date(time));
-               setNghttime(text,format,time,tv);
+                setNghttime(text, format, time, tv);
             }
         });
         dialog.show();
     }
 
-    private void setNghttime(final String text, final String morningTime , final long morntime, final TextView tv){
+    private void setNghttime(final String text, final String morningTime, final long morntime, final TextView tv) {
         DatePickDialog dialog = new DatePickDialog(getActivity());
         dialog.setYearLimt(5);
         dialog.setTitle("晚上营业时间");
@@ -277,11 +415,11 @@ public class ShopDataFragment extends BaseFragment {
                 long time = date.getTime();
                 SimpleDateFormat simpledateformat = new SimpleDateFormat("HH:mm");
                 String format = simpledateformat.format(new Date(time));
-                if(morntime>time){
+                if (morntime > time) {
                     Toast.makeText(mActivity, "请选择正确的区间", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                tv.setText(morningTime+"-"+format+" "+text);
+                tv.setText(morningTime + "-" + format + " " + text);
             }
         });
         dialog.show();
@@ -291,7 +429,7 @@ public class ShopDataFragment extends BaseFragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
             String value = data.getStringExtra("value");
-            switch (requestCode){
+            switch (requestCode) {
                 case 701:
                     mentity = (GetUserInfoEntity) data.getSerializableExtra("userInfo");
                     if (CommonUtils.isNull(mentity)) {
@@ -306,7 +444,7 @@ public class ShopDataFragment extends BaseFragment {
                     }
                     initUserInfo(mentity);
                     break;
-                case  UPDATE_PHONE:
+                case UPDATE_PHONE:
                     phone = value;
                     tv_phone.setText(value);
                     mentity.setPhone(value);

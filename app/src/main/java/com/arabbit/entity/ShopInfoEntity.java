@@ -17,11 +17,20 @@ public class ShopInfoEntity {
     String avatar_img;
     int user_id;
     int id;
+    String distance;
     List<String> mbimg;
     List<String> cpimg;
     List<String> primg;
     List<String> storeimg;
 
+
+    public String getDistance() {
+        return distance;
+    }
+
+    public void setDistance(String distance) {
+        this.distance = distance;
+    }
 
     public String getName() {
         return name;

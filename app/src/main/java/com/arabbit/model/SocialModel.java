@@ -26,6 +26,7 @@ import com.arabbit.entity.SeatListEntity;
 import com.arabbit.entity.GiftListEntity;
 import com.arabbit.entity.ProtionListEntity;
 import com.arabbit.entity.ShopImgEntity;
+import com.arabbit.entity.ShopInfoEntity;
 import com.arabbit.entity.ShopcpListEntity;
 import com.arabbit.entity.ShopmbListEntity;
 import com.arabbit.entity.ShopmbgoodListEntity;
@@ -239,57 +240,6 @@ public class SocialModel extends SubModel {
         callback.AddSubscription(subscriber);
     }
 
-
-
-    //修改店铺图片
-    public void updateShopShopImgs(String[] file,final IModelResult<EmptyEntity> callback) {
-        String user_id = SPUtils.getString("user_id", "");
-        String token = SPUtils.getString("token", "");
-        String imgs  = Arrays.toString(file);
-        imgs = imgs.replace("[","[\"");
-        imgs = imgs.replace("]","\"]");
-        imgs = imgs.replace(",","\",\"");
-        Subscription subscriber = httpService.updateShopImg(version, client, user_id,imgs )
-                .observeOn(AndroidSchedulers.mainThread())
-                .unsubscribeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
-                .compose(new CommonTransformer<EmptyEntity>())
-                .subscribe(new CommonSubscriber<EmptyEntity>(viewload) {
-                    @Override
-                    protected void onError(ApiException e) {
-                        callback.OnError(e);
-                    }
-
-                    @Override
-                    public void onNext(EmptyEntity sendSmsCode) {
-                        callback.OnSuccess(sendSmsCode);
-                    }
-                });
-        callback.AddSubscription(subscriber);
-    }
-
-
-    public void getShopImgs(final IModelResult<ShopImgEntity> callback) {
-        String user_id = SPUtils.getString("user_id", "");
-        String token = SPUtils.getString("token", "");
-        Subscription subscriber = httpService.getShopImgs(version, client, user_id)
-                .observeOn(AndroidSchedulers.mainThread())
-                .unsubscribeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
-                .compose(new CommonTransformer<ShopImgEntity>())
-                .subscribe(new CommonSubscriber<ShopImgEntity>(viewload) {
-                    @Override
-                    protected void onError(ApiException e) {
-                        callback.OnError(e);
-                    }
-
-                    @Override
-                    public void onNext(ShopImgEntity sendSmsCode) {
-                        callback.OnSuccess(sendSmsCode);
-                    }
-                });
-        callback.AddSubscription(subscriber);
-    }
 
     //修改资料(头像)
     public void updateUserInfoAvatarImg(String avatar_img, final IModelResult<EmptyEntity> callback) {
@@ -2639,7 +2589,246 @@ public class SocialModel extends SubModel {
         callback.AddSubscription(subscriber);
     }
 
+    //修改店铺图片
+    public void updateShopShopImgs(String[] file,final IModelResult<EmptyEntity> callback) {
+        String user_id = SPUtils.getString("user_id", "");
+        String token = SPUtils.getString("token", "");
+        String imgs  = Arrays.toString(file);
+        imgs = imgs.replace("[","[\"");
+        imgs = imgs.replace("]","\"]");
+        imgs = imgs.replace(",","\",\"");
+        Subscription subscriber = httpService.updateShopImg(version, client, user_id,imgs )
+                .observeOn(AndroidSchedulers.mainThread())
+                .unsubscribeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .compose(new CommonTransformer<EmptyEntity>())
+                .subscribe(new CommonSubscriber<EmptyEntity>(viewload) {
+                    @Override
+                    protected void onError(ApiException e) {
+                        callback.OnError(e);
+                    }
 
+                    @Override
+                    public void onNext(EmptyEntity sendSmsCode) {
+                        callback.OnSuccess(sendSmsCode);
+                    }
+                });
+        callback.AddSubscription(subscriber);
+    }
+
+    //获取店铺图片
+    public void getShopImgs(final IModelResult<ShopImgEntity> callback) {
+        String user_id = SPUtils.getString("user_id", "");
+        String token = SPUtils.getString("token", "");
+        Subscription subscriber = httpService.getShopImgs(version, client, user_id)
+                .observeOn(AndroidSchedulers.mainThread())
+                .unsubscribeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .compose(new CommonTransformer<ShopImgEntity>())
+                .subscribe(new CommonSubscriber<ShopImgEntity>(viewload) {
+                    @Override
+                    protected void onError(ApiException e) {
+                        callback.OnError(e);
+                    }
+
+                    @Override
+                    public void onNext(ShopImgEntity sendSmsCode) {
+                        callback.OnSuccess(sendSmsCode);
+                    }
+                });
+        callback.AddSubscription(subscriber);
+    }
+
+
+    //获取店铺信息
+    public void getShopInfo(final IModelResult<ShopInfoEntity> callback) {
+        String user_id = SPUtils.getString("user_id", "");
+        String token = SPUtils.getString("token", "");
+        Subscription subscriber = httpService.getInfo(version, client, user_id)
+                .observeOn(AndroidSchedulers.mainThread())
+                .unsubscribeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .compose(new CommonTransformer<ShopInfoEntity>())
+                .subscribe(new CommonSubscriber<ShopInfoEntity>(viewload) {
+                    @Override
+                    protected void onError(ApiException e) {
+                        Log.d("text",e+"");
+                    }
+
+                    @Override
+                    public void onNext(ShopInfoEntity sendSmsCode) {
+                        callback.OnSuccess(sendSmsCode);
+                    }
+                });
+        callback.AddSubscription(subscriber);
+    }
+
+
+    //修改店铺营业状态
+    public void updateInfoForstatus(int states,final IModelResult<EmptyEntity> callback) {
+        String user_id = SPUtils.getString("user_id", "");
+        String token = SPUtils.getString("token", "");
+        Subscription subscriber = httpService.updateInfoForstatus(version, client, user_id,states)
+                .observeOn(AndroidSchedulers.mainThread())
+                .unsubscribeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .compose(new CommonTransformer<EmptyEntity>())
+                .subscribe(new CommonSubscriber<EmptyEntity>(viewload) {
+                    @Override
+                    protected void onError(ApiException e) {
+                        callback.OnError(e);
+                    }
+
+                    @Override
+                    public void onNext(EmptyEntity sendSmsCode) {
+                        callback.OnSuccess(sendSmsCode);
+                    }
+                });
+        callback.AddSubscription(subscriber);
+    }
+
+    //修改店铺经纬度
+    public void updateInfoForaddress(String  lat,String lng,final IModelResult<EmptyEntity> callback) {
+        String user_id = SPUtils.getString("user_id", "");
+        String token = SPUtils.getString("token", "");
+        Subscription subscriber = httpService.updateInfoForaddress(version, client, user_id,lat,lng)
+                .observeOn(AndroidSchedulers.mainThread())
+                .unsubscribeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .compose(new CommonTransformer<EmptyEntity>())
+                .subscribe(new CommonSubscriber<EmptyEntity>(viewload) {
+                    @Override
+                    protected void onError(ApiException e) {
+                        callback.OnError(e);
+                    }
+
+                    @Override
+                    public void onNext(EmptyEntity sendSmsCode) {
+                        callback.OnSuccess(sendSmsCode);
+                    }
+                });
+        callback.AddSubscription(subscriber);
+    }
+
+
+
+    //获取关注店铺
+    public void getFocusShopList(final IModelResult<List<ShopInfoEntity>> callback) {
+        String user_id = SPUtils.getString("user_id", "");
+        String token = SPUtils.getString("token", "");
+        Subscription subscriber = httpService.getFocusShopList(version, client, user_id)
+                .observeOn(AndroidSchedulers.mainThread())
+                .unsubscribeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .compose(new CommonTransformer<List<ShopInfoEntity>>())
+                .subscribe(new CommonSubscriber<List<ShopInfoEntity>>(viewload) {
+                    @Override
+                    protected void onError(ApiException e) {
+                        callback.OnError(e);
+                    }
+
+                    @Override
+                    public void onNext(List<ShopInfoEntity> sendSmsCode) {
+                        callback.OnSuccess(sendSmsCode);
+                    }
+                });
+        callback.AddSubscription(subscriber);
+    }
+
+
+    //获取附近店铺
+    public void getNearbyShopList(String lng ,String lat, int far,String type,final IModelResult<List<ShopInfoEntity>> callback) {
+        String user_id = SPUtils.getString("user_id", "");
+        String token = SPUtils.getString("token", "");
+        Subscription subscriber = httpService.getNearbyShopList(version, client, lng,lat,far,type)
+                .observeOn(AndroidSchedulers.mainThread())
+                .unsubscribeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .compose(new CommonTransformer<List<ShopInfoEntity>>())
+                .subscribe(new CommonSubscriber<List<ShopInfoEntity>>(viewload) {
+                    @Override
+                    protected void onError(ApiException e) {
+                        callback.OnError(e);
+                    }
+
+                    @Override
+                    public void onNext(List<ShopInfoEntity> sendSmsCode) {
+                        callback.OnSuccess(sendSmsCode);
+                    }
+                });
+        callback.AddSubscription(subscriber);
+    }
+
+
+    //获取附近的秒爆商品店铺
+    public void getNearbyMbList(String lng ,String lat, int far,String type,final IModelResult<List<ShopInfoEntity>> callback) {
+        String user_id = SPUtils.getString("user_id", "");
+        String token = SPUtils.getString("token", "");
+        Subscription subscriber = httpService.getNearbyMbList(version, client, lng,lat,far,type)
+                .observeOn(AndroidSchedulers.mainThread())
+                .unsubscribeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .compose(new CommonTransformer<List<ShopInfoEntity>>())
+                .subscribe(new CommonSubscriber<List<ShopInfoEntity>>(viewload) {
+                    @Override
+                    protected void onError(ApiException e) {
+                        callback.OnError(e);
+                    }
+
+                    @Override
+                    public void onNext(List<ShopInfoEntity> sendSmsCode) {
+                        callback.OnSuccess(sendSmsCode);
+                    }
+                });
+        callback.AddSubscription(subscriber);
+    }
+
+
+    //获取附近的打折商品店铺
+    public void getNearbyCpList(String lng ,String lat, int far,String type,final IModelResult<List<ShopInfoEntity>> callback) {
+        String user_id = SPUtils.getString("user_id", "");
+        String token = SPUtils.getString("token", "");
+        Subscription subscriber = httpService.getNearbyCpList(version, client, lng,lat,far,type)
+                .observeOn(AndroidSchedulers.mainThread())
+                .unsubscribeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .compose(new CommonTransformer<List<ShopInfoEntity>>())
+                .subscribe(new CommonSubscriber<List<ShopInfoEntity>>(viewload) {
+                    @Override
+                    protected void onError(ApiException e) {
+                        callback.OnError(e);
+                    }
+
+                    @Override
+                    public void onNext(List<ShopInfoEntity> sendSmsCode) {
+                        callback.OnSuccess(sendSmsCode);
+                    }
+                });
+        callback.AddSubscription(subscriber);
+    }
+
+    //获取附近的抽奖活动店铺
+    public void getNearbyPtList(String lng ,String lat, int far,String type,final IModelResult<List<ShopInfoEntity>> callback) {
+        String user_id = SPUtils.getString("user_id", "");
+        String token = SPUtils.getString("token", "");
+        Subscription subscriber = httpService.getNearbyPtList(version, client, lng,lat,far,type)
+                .observeOn(AndroidSchedulers.mainThread())
+                .unsubscribeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .compose(new CommonTransformer<List<ShopInfoEntity>>())
+                .subscribe(new CommonSubscriber<List<ShopInfoEntity>>(viewload) {
+                    @Override
+                    protected void onError(ApiException e) {
+                        callback.OnError(e);
+                    }
+
+                    @Override
+                    public void onNext(List<ShopInfoEntity> sendSmsCode) {
+                        callback.OnSuccess(sendSmsCode);
+                    }
+                });
+        callback.AddSubscription(subscriber);
+    }
 
 
 

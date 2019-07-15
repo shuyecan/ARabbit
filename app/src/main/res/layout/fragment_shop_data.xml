@@ -350,7 +350,26 @@
                         android:layout_marginLeft="@dimen/a_10"
                         android:contentDescription="TODO"
                         android:scaleType="fitXY"
-                        android:src="@mipmap/denglu_img_logo" />
+                         />
+                    <ImageView
+                        android:id="@+id/iv_bmgood2"
+                        android:layout_width="@dimen/a_136"
+                        android:layout_height="@dimen/a_136"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/a_10"
+                        android:contentDescription="TODO"
+                        android:scaleType="fitXY"
+                        />
+                    <ImageView
+                        android:id="@+id/iv_bmgood3"
+                        android:layout_width="@dimen/a_136"
+                        android:layout_height="@dimen/a_136"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/a_10"
+                        android:contentDescription="TODO"
+                        android:scaleType="fitXY" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -417,9 +436,26 @@
                         android:layout_gravity="center"
                         android:layout_marginLeft="@dimen/a_10"
                         android:contentDescription="TODO"
-                        android:scaleType="fitXY"
-                        android:src="@mipmap/denglu_img_logo" />
+                        android:scaleType="fitXY" />
 
+                    <ImageView
+                        android:id="@+id/iv_prgood2"
+                        android:layout_width="@dimen/a_136"
+                        android:layout_height="@dimen/a_136"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/a_10"
+                        android:contentDescription="TODO"
+                        android:scaleType="fitXY" />
+                    <ImageView
+                        android:id="@+id/iv_prgood3"
+                        android:layout_width="@dimen/a_136"
+                        android:layout_height="@dimen/a_136"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/a_10"
+                        android:contentDescription="TODO"
+                        android:scaleType="fitXY" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -487,7 +523,28 @@
                         android:layout_marginLeft="@dimen/a_10"
                         android:contentDescription="TODO"
                         android:scaleType="fitXY"
-                        android:src="@mipmap/denglu_img_logo" />
+                       />
+
+                    <ImageView
+                        android:id="@+id/iv_cpgood2"
+                        android:layout_width="@dimen/a_136"
+                        android:layout_height="@dimen/a_136"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/a_10"
+                        android:contentDescription="TODO"
+                        android:scaleType="fitXY"
+                         />
+                    <ImageView
+                        android:id="@+id/iv_cpgood3"
+                        android:layout_width="@dimen/a_136"
+                        android:layout_height="@dimen/a_136"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/a_10"
+                        android:contentDescription="TODO"
+                        android:scaleType="fitXY"
+                         />
                 </LinearLayout>
             </LinearLayout>
 
@@ -555,7 +612,32 @@
                         android:layout_marginLeft="@dimen/a_10"
                         android:contentDescription="TODO"
                         android:scaleType="fitXY"
-                        android:src="@mipmap/denglu_img_logo" />
+                       />
+
+
+                    <ImageView
+                        android:id="@+id/iv_shop_img2"
+                        android:layout_width="@dimen/a_136"
+                        android:layout_height="@dimen/a_136"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/a_10"
+                        android:contentDescription="TODO"
+                        android:scaleType="fitXY"
+                       />
+
+
+
+                    <ImageView
+                        android:id="@+id/iv_shop_img3"
+                        android:layout_width="@dimen/a_136"
+                        android:layout_height="@dimen/a_136"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/a_10"
+                        android:contentDescription="TODO"
+                        android:scaleType="fitXY"
+                       />
                 </LinearLayout>
             </LinearLayout>
 
